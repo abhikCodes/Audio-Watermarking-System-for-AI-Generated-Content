@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Project",
+			"path": "."
+		},
+		{
+			"name": "50_speakers_audio_data",
+			"path": "../../../../../.cache/kagglehub/datasets/vjcalling/speaker-recognition-audio-dataset/versions/1/50_speakers_audio_data"
+		}
+	],
+	"settings": {}
+}
