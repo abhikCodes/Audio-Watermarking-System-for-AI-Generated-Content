@@ -1,0 +1,6 @@
+./venv
+/venv
+/Encoder_Decoder_Improved.ipynb
+/50_speakers_audio_data
+/frontend/node_modules
+/frontend/build
