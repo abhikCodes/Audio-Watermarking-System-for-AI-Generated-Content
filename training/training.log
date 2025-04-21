@@ -167,3 +167,31 @@ Epoch 10/10:
 2025-04-15 18:45:36,706 - SteganographyTraining - INFO - Dataset preparation took 0.00 seconds
 2025-04-15 18:45:36,706 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
 2025-04-15 18:45:36,706 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-15 19:37:56
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - No GPU detected. Using CPU.
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - Using device: cpu
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - Starting training with parameters:
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - - Training directory: 50_speakers_audio_data
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - - Number of epochs: 10
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - - Batch size: 4
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - - Device: cpu
+2025-04-21 00:35:14,858 - SteganographyTraining - INFO - Scanning directory 50_speakers_audio_data for WAV files...
+2025-04-21 00:35:15,005 - SteganographyTraining - INFO - Found 2511 potential WAV files for training
+2025-04-21 00:35:15,006 - SteganographyTraining - INFO - Dataset preparation took 0.15 seconds
+2025-04-21 00:35:15,007 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
+2025-04-21 00:35:15,007 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-21 01:27:35
+2025-04-21 00:35:18,352 - SteganographyTraining - INFO - Moth Encoder Architecture:
+MothEncoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=96000, bias=True)
+)
+2025-04-21 00:35:18,352 - SteganographyTraining - INFO - Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=1, bias=True)
+)

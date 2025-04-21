@@ -19,13 +19,15 @@ sys.path.append(project_root)
 
 from models.moth.encoder import MothEncoder
 from models.bat.decoder import BatDecoder
+from configuration.config import settings
+
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("training/training.log"),
+        logging.FileHandler(settings.TRAIN_LOG_PATH),
         logging.StreamHandler()
     ]
 )
@@ -33,7 +35,10 @@ logger = logging.getLogger("SteganographyTraining")
 
 # --- Auto-detect device ---
 def get_default_device():
-    if torch.cuda.is_available():
+    if settings.DEVICE:
+        logger.info(f"Using configured device from settings: {settings.DEVICE}")
+        return settings.DEVICE
+    elif torch.cuda.is_available():
         logger.info("CUDA detected. Using GPU.")
         return 'cuda'
     elif torch.backends.mps.is_available():
@@ -45,7 +50,7 @@ def get_default_device():
 # --------------------------
 
 class AudioDataset(Dataset):
-    def __init__(self, audio_dir, max_length=96000, sample_rate=16000):
+    def __init__(self, audio_dir):
         """
         Dataset for audio steganography
         Args:
@@ -54,8 +59,8 @@ class AudioDataset(Dataset):
             sample_rate: Sample rate for audio loading
         """
         self.audio_paths = []
-        self.max_length = max_length
-        self.sample_rate = sample_rate
+        self.max_length = settings.MAX_LENGTH
+        self.sample_rate = settings.SAMPLE_RATE
         self.failed_loads = 0 # Keep track of failed loads
         
         # Collect all WAV files
@@ -119,7 +124,7 @@ def collate_fn_skip_none(batch):
     return default_collate(batch)
 # -----------------------------
 
-def train_models(train_dir, num_epochs=10, batch_size=4, device_str=None):
+def train_models(train_dir, device_str=None):
     """
     Train both Moth and Bat models
     Args:
@@ -128,6 +133,8 @@ def train_models(train_dir, num_epochs=10, batch_size=4, device_str=None):
         batch_size: Batch size for training
         device_str: Device to train on ('cuda', 'mps', or 'cpu'). Auto-detects if None.
     """
+    num_epochs = settings.NUM_EPOCHS
+    batch_size = settings.BATCH_SIZE
     # --- Determine device ---
     if device_str is None:
         device_str = get_default_device()
@@ -150,7 +157,8 @@ def train_models(train_dir, num_epochs=10, batch_size=4, device_str=None):
     # Create dataset and dataloader
     start_time = time.time()
     dataset = AudioDataset(train_dir)
-    # Use the custom collate function
+
+    # Use the custom collate function to get rid of NULL/Corrupted entries from batch
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn_skip_none)
     logger.info(f"Dataset preparation took {time.time() - start_time:.2f} seconds")
     
@@ -165,6 +173,7 @@ def train_models(train_dir, num_epochs=10, batch_size=4, device_str=None):
     estimated_time_per_epoch = batches_per_epoch * 0.5  # Rough estimate
     estimated_total_time = estimated_time_per_epoch * num_epochs
     estimated_completion_time = datetime.datetime.now() + datetime.timedelta(seconds=estimated_total_time)
+
     logger.info(f"Estimated training time (approx): {str(datetime.timedelta(seconds=int(estimated_total_time)))}")
     logger.info(f"Estimated completion time (approx): {estimated_completion_time.strftime('%Y-%m-%d %H:%M:%S')}")
     
@@ -177,8 +186,8 @@ def train_models(train_dir, num_epochs=10, batch_size=4, device_str=None):
     logger.info(f"Bat Decoder Architecture:\n{decoder}")
     
     # Initialize optimizers
-    encoder_optimizer = optim.Adam(encoder.parameters(), lr=0.001)
-    decoder_optimizer = optim.Adam(decoder.parameters(), lr=0.001)
+    encoder_optimizer = optim.Adam(encoder.parameters(), lr=settings.LEARNING_RATE)
+    decoder_optimizer = optim.Adam(decoder.parameters(), lr=settings.LEARNING_RATE)
     
     # Initialize PESQ trackers for monitoring audio quality
     best_pesq_score = 0.0
@@ -316,9 +325,10 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Train Moth and Bat models')
     parser.add_argument('--train_dir', type=str, required=True, help='Directory containing training audio files')
-    parser.add_argument('--num_epochs', type=int, default=10, help='Number of training epochs')
-    parser.add_argument('--batch_size', type=int, default=4, help='Batch size for training')
-    parser.add_argument('--device', type=str, default=None, help='Device to train on (e.g., cuda, mps, cpu). Auto-detects if not specified.')
+    # parser.add_argument('--num_epochs', type=int, default=10, help='Number of training epochs')
+    # parser.add_argument('--batch_size', type=int, default=4, help='Batch size for training')
+    # parser.add_argument('--device', type=str, default=None, help='Device to train on (e.g., cuda, mps, cpu). Auto-detects if not specified.')
     
     args = parser.parse_args()
-    train_models(args.train_dir, args.num_epochs, args.batch_size, args.device)
+    # train_models(args.train_dir, args.num_epochs, args.batch_size, args.device)
+    train_models(args.train_dir)
