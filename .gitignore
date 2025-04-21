@@ -5,5 +5,7 @@
 /frontend/node_modules
 /frontend/build
 .DS_Store
-models/bat/__pycache__
-models/moth/__pycache__
+models/**/__pycache__/*
+models/**/*.pth
+models/**/*.pt
+models/**/*.ckpt
