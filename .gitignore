@@ -4,3 +4,8 @@
 /50_speakers_audio_data
 /frontend/node_modules
 /frontend/build
+.DS_Store
+models/**/__pycache__/*
+models/**/*.pth
+models/**/*.pt
+models/**/*.ckpt
