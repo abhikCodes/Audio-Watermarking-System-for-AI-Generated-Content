@@ -15,8 +15,9 @@ class Settings(BaseSettings):
 
     # @Yash, reduce the FFT size to 1024, if training is taking too long or increase hop_len to 1024
     FFT_SIZE: int = 2048           # Size of FFT
-    HOP_LEN: int = 512              # Hop length for STFT
-    WIN_LEN: int = 2048             # Window length for STFT
+    HOP_LEN: int = 512             # Hop length for STFT
+    WIN_LEN: int = 2048            # Window length for STFT
+    N_MELS: int = 128              # Number of mel bands
 
     # --- Decoder settings ---
     DECODER_INPUT_SIZE: int = 96000
@@ -44,6 +45,10 @@ class Settings(BaseSettings):
 
     # --- Device settings ---
     DEVICE: Optional[str] = 'mps'  # 'cuda', 'mps', or 'cpu'; auto-detect if None
+
+    # --- Loss Flags ---
+    SPECTROGRAM = 'spec'
+    MEL_SPECTROGRAM = 'mel'
 
     class Config:
         # Enable loading overrides from a .env file

@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torchaudio
 import numpy as np
 from pesq import pesq
 from configuration.config import settings
@@ -100,8 +101,33 @@ class MothEncoder(nn.Module):
         
         spec = torch.abs(stft)
         return spec
+
+    def compute_mel_spectrogram(self, audio):
+        """
+        Compute the mel-spectrogram of the audio.
+        Args:
+            audio: Tensor of shape (batch_size, 1, num_samples)
+        Returns:
+            mel_spec: Mel-spectrogram of shape (batch_size, n_mels, time_steps)
+        """
+        n_fft = settings.FFT_SIZE
+        hop_length = settings.HOP_LEN
+        n_mels = settings.N_MELS
+        
+        mel_transform = torchaudio.transforms.MelSpectrogram(
+            sample_rate=settings.SAMPLE_RATE,
+            n_fft=n_fft,
+            hop_length=hop_length,
+            n_mels=n_mels
+        ).to(audio.device)
+        
+        if audio.dim() == 3:
+            audio = audio.squeeze(1)  # (batch_size, num_samples)
+        
+        return mel_transform(audio)
     
-    def compute_loss(self, original_audio, watermarked_audio, decoder_output):
+    
+    def compute_loss(self, original_audio, watermarked_audio, decoder_output, flag):
         """
         Compute the loss for training using spectrogram-based perceptual loss.
         Args:
@@ -112,11 +138,20 @@ class MothEncoder(nn.Module):
             total_loss: Combined loss value
             metrics: Dictionary of individual loss components
         """
+        if flag == settings.SPECTROGRAM:
+            original_spec = self.compute_spectrogram(original_audio)
+            watermarked_spec = self.compute_spectrogram(watermarked_audio)
+            # Perceptual loss: MSE between spectrograms
+            perceptual_loss = F.mse_loss(watermarked_spec, original_spec)
 
-        original_spec = self.compute_spectrogram(original_audio)
-        watermarked_spec = self.compute_spectrogram(watermarked_audio)
-        # Perceptual loss: MSE between spectrograms
-        perceptual_loss = F.mse_loss(watermarked_spec, original_spec)
+        elif flag == settings.MEL_SPECTROGRAM:
+            # Compute mel-spectrograms
+            original_mel = self.compute_mel_spectrogram(original_audio)
+            watermarked_mel = self.compute_mel_spectrogram(watermarked_audio)
+            
+            # Perceptual loss: L1 on log-mel-spectrograms
+            perceptual_loss = F.l1_loss(torch.log1p(watermarked_mel), torch.log1p(original_mel))
+
         # Detection loss: Ensure decoder can detect the watermark
         detection_loss = F.binary_cross_entropy_with_logits(decoder_output, torch.ones_like(decoder_output))
         # Total loss with balancing factor
