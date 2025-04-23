@@ -5,6 +5,7 @@
 /frontend/node_modules
 /frontend/build
 .DS_Store
+/models_V2
 models/**/__pycache__/*
 models/**/*.pth
 models/**/*.pt
