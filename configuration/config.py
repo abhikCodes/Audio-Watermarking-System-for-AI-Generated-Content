@@ -47,8 +47,10 @@ class Settings(BaseSettings):
     DEVICE: Optional[str] = 'mps'  # 'cuda', 'mps', or 'cpu'; auto-detect if None
 
     # --- Loss Flags ---
+    MSE = 'mse'
     SPECTROGRAM = 'spec'
     MEL_SPECTROGRAM = 'mel'
+    PSYCHOACOUSTIC = 'psych'
 
     class Config:
         # Enable loading overrides from a .env file

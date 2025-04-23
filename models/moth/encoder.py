@@ -113,7 +113,7 @@ class MothEncoder(nn.Module):
         n_fft = settings.FFT_SIZE
         hop_length = settings.HOP_LEN
         n_mels = settings.N_MELS
-        
+
         mel_transform = torchaudio.transforms.MelSpectrogram(
             sample_rate=settings.SAMPLE_RATE,
             n_fft=n_fft,
@@ -126,8 +126,27 @@ class MothEncoder(nn.Module):
         
         return mel_transform(audio)
     
+    def compute_psychoacoustic_loss(self, original_audio, watermarked_audio):
+        PSD_original = self.compute_psd(original_audio)
+        PSD_watermarked = self.compute_psd(watermarked_audio)
+        
+        if not hasattr(self, 'S'):
+            n_freq = settings.STFT_N_FFT // 2 + 1
+            f_bins = torch.linspace(0, settings.SAMPLE_RATE / 2, n_freq, device=original_audio.device)
+            bark_bins = 13 * torch.arctan(0.00076 * f_bins) + 3.5 * torch.arctan((f_bins / 7500)**2)
+            diff = torch.abs(bark_bins[:, None] - bark_bins[None, :])
+            S = torch.clamp(1 - diff, min=0)
+            self.S = S
+        
+        masked_energy = torch.einsum('ji,bjt->bjt', self.S, PSD_original)
+        epsilon = 1e-8
+        threshold = masked_energy + epsilon
+        diff = torch.abs(PSD_watermarked - PSD_original)
+        perceptual_loss = (diff**2 / threshold).mean()
+        return perceptual_loss
     
-    def compute_loss(self, original_audio, watermarked_audio, decoder_output, flag):
+    
+    def compute_loss(self, original_audio, watermarked_audio, decoder_output, flag='mse'):
         """
         Compute the loss for training using spectrogram-based perceptual loss.
         Args:
@@ -138,7 +157,10 @@ class MothEncoder(nn.Module):
             total_loss: Combined loss value
             metrics: Dictionary of individual loss components
         """
-        if flag == settings.SPECTROGRAM:
+        if flag == settings.MSE:
+            perceptual_loss = F.mse_loss(watermarked_audio, original_audio)
+
+        elif flag == settings.SPECTROGRAM:
             original_spec = self.compute_spectrogram(original_audio)
             watermarked_spec = self.compute_spectrogram(watermarked_audio)
             # Perceptual loss: MSE between spectrograms
@@ -148,9 +170,14 @@ class MothEncoder(nn.Module):
             # Compute mel-spectrograms
             original_mel = self.compute_mel_spectrogram(original_audio)
             watermarked_mel = self.compute_mel_spectrogram(watermarked_audio)
-            
             # Perceptual loss: L1 on log-mel-spectrograms
             perceptual_loss = F.l1_loss(torch.log1p(watermarked_mel), torch.log1p(original_mel))
+
+        elif flag == settings.PSYCHOACOUSTIC:
+            perceptual_loss = self.compute_psychoacoustic_loss(original_audio, watermarked_audio)
+
+        else:
+            raise ValueError(f"Unsupported loss_type: {flag}")
 
         # Detection loss: Ensure decoder can detect the watermark
         detection_loss = F.binary_cross_entropy_with_logits(decoder_output, torch.ones_like(decoder_output))
