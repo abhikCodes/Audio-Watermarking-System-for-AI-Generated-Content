@@ -112,19 +112,16 @@ class MothEncoder(nn.Module):
             total_loss: Combined loss value
             metrics: Dictionary of individual loss components
         """
-        # Compute spectrograms
+
         original_spec = self.compute_spectrogram(original_audio)
         watermarked_spec = self.compute_spectrogram(watermarked_audio)
-        
         # Perceptual loss: MSE between spectrograms
         perceptual_loss = F.mse_loss(watermarked_spec, original_spec)
-        
         # Detection loss: Ensure decoder can detect the watermark
         detection_loss = F.binary_cross_entropy_with_logits(decoder_output, torch.ones_like(decoder_output))
-        
         # Total loss with balancing factor
         total_loss = perceptual_loss + settings.ALPHA * detection_loss
-        
+
         metrics = {
             'perceptual_loss': perceptual_loss.item(),
             'detection_loss': detection_loss.item(),

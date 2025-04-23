@@ -195,3 +195,347 @@ BatDecoder(
   (fc1): Linear(in_features=191744, out_features=512, bias=True)
   (fc2): Linear(in_features=512, out_features=1, bias=True)
 )
+2025-04-21 19:27:04,679 - SteganographyTraining - INFO - MPS detected. Using Apple Silicon GPU.
+2025-04-21 19:27:04,679 - SteganographyTraining - INFO - Using device: mps
+2025-04-21 19:27:04,679 - SteganographyTraining - INFO - Starting training with parameters:
+2025-04-21 19:27:04,680 - SteganographyTraining - INFO - - Training directory: 50_speakers_audio_data
+2025-04-21 19:27:04,680 - SteganographyTraining - INFO - - Number of epochs: 10
+2025-04-21 19:27:04,680 - SteganographyTraining - INFO - - Batch size: 4
+2025-04-21 19:27:04,680 - SteganographyTraining - INFO - - Device: mps
+2025-04-21 19:27:04,680 - SteganographyTraining - INFO - Scanning directory 50_speakers_audio_data for WAV files...
+2025-04-21 19:27:04,683 - SteganographyTraining - INFO - Found 2511 potential WAV files for training
+2025-04-21 19:27:04,684 - SteganographyTraining - INFO - Dataset preparation took 0.00 seconds
+2025-04-21 19:27:04,684 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
+2025-04-21 19:27:04,684 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-21 20:19:24
+2025-04-21 19:27:06,164 - SteganographyTraining - INFO - Moth Encoder Architecture:
+MothEncoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=96000, bias=True)
+)
+2025-04-21 19:27:06,165 - SteganographyTraining - INFO - Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=1, bias=True)
+)
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - MPS detected. Using Apple Silicon GPU.
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - Using device: mps
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - Starting training with parameters:
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - - Training directory: 50_speakers_audio_data
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - - Number of epochs: 10
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - - Batch size: 4
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - - Device: mps
+2025-04-21 19:28:35,390 - SteganographyTraining - INFO - Scanning directory 50_speakers_audio_data for WAV files...
+2025-04-21 19:28:35,401 - SteganographyTraining - INFO - Found 2511 potential WAV files for training
+2025-04-21 19:28:35,401 - SteganographyTraining - INFO - Dataset preparation took 0.01 seconds
+2025-04-21 19:28:35,401 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
+2025-04-21 19:28:35,401 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-21 20:20:55
+2025-04-21 19:28:36,662 - SteganographyTraining - INFO - Moth Encoder Architecture:
+MothEncoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=96000, bias=True)
+)
+2025-04-21 19:28:36,662 - SteganographyTraining - INFO - Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=1, bias=True)
+)
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - MPS detected. Using Apple Silicon GPU.
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - Using device: mps
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - Starting training with parameters:
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - - Training directory: 50_speakers_audio_data
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - - Number of epochs: 10
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - - Batch size: 4
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - - Device: mps
+2025-04-22 18:06:29,593 - SteganographyTraining - INFO - Scanning directory 50_speakers_audio_data for WAV files...
+2025-04-22 18:06:29,596 - SteganographyTraining - INFO - Found 2511 potential WAV files for training
+2025-04-22 18:06:29,596 - SteganographyTraining - INFO - Dataset preparation took 0.00 seconds
+2025-04-22 18:06:29,596 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
+2025-04-22 18:06:29,596 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-22 18:58:49
+2025-04-22 18:06:30,990 - SteganographyTraining - INFO - Moth Encoder Architecture:
+MothEncoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=96000, bias=True)
+)
+2025-04-22 18:06:30,990 - SteganographyTraining - INFO - Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=1, bias=True)
+)
+2025-04-22 18:09:42,132 - SteganographyTraining - INFO - 
+Epoch 1/10:
+2025-04-22 18:09:42,132 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:09:42,132 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0474
+2025-04-22 18:09:42,132 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6947
+2025-04-22 18:09:42,132 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-22 18:09:42,133 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-22 18:09:42,133 - SteganographyTraining - INFO - - Average Detection Loss: 0.4742
+2025-04-22 18:09:42,133 - SteganographyTraining - INFO - - Epoch Time: 0:03:10
+2025-04-22 18:09:42,133 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:28:34
+2025-04-22 18:12:49,156 - SteganographyTraining - INFO - 
+Epoch 2/10:
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0370
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Average Decoder Loss: 0.1498
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.9013
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0023
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Average Detection Loss: 0.3469
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Epoch Time: 0:03:05
+2025-04-22 18:12:49,157 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:25:05
+2025-04-22 18:15:57,031 - SteganographyTraining - INFO - 
+Epoch 3/10:
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0341
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0028
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Epoch Time: 0:03:06
+2025-04-22 18:15:57,032 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:21:54
+2025-04-22 18:19:03,891 - SteganographyTraining - INFO - 
+Epoch 4/10:
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0341
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0028
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Epoch Time: 0:03:05
+2025-04-22 18:19:03,892 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:18:43
+2025-04-22 18:22:10,706 - SteganographyTraining - INFO - 
+Epoch 5/10:
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0341
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0028
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Epoch Time: 0:03:05
+2025-04-22 18:22:10,708 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:15:34
+2025-04-22 18:25:17,487 - SteganographyTraining - INFO - 
+Epoch 6/10:
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0341
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0027
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Epoch Time: 0:03:05
+2025-04-22 18:25:17,489 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:12:27
+2025-04-22 18:28:25,466 - SteganographyTraining - INFO - 
+Epoch 7/10:
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0340
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0027
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Epoch Time: 0:03:06
+2025-04-22 18:28:25,467 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:09:20
+2025-04-22 18:31:33,108 - SteganographyTraining - INFO - 
+Epoch 8/10:
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0339
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0026
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Epoch Time: 0:03:06
+2025-04-22 18:31:33,109 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:06:13
+2025-04-22 18:34:40,789 - SteganographyTraining - INFO - 
+Epoch 9/10:
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0338
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0025
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Epoch Time: 0:03:06
+2025-04-22 18:34:40,791 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:03:06
+2025-04-22 18:37:48,589 - SteganographyTraining - INFO - 
+Epoch 10/10:
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0336
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Average Decoder Loss: 0.0000
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Average Decoder Accuracy: 1.0000
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0023
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Average Detection Loss: 0.3133
+2025-04-22 18:37:48,590 - SteganographyTraining - INFO - - Epoch Time: 0:03:06
+2025-04-22 18:37:48,591 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:00:00
+2025-04-22 18:37:50,621 - SteganographyTraining - INFO - Total training time: 0:31:21
+2025-04-22 18:37:50,622 - SteganographyTraining - INFO - Total files that failed to load: 0
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - MPS detected. Using Apple Silicon GPU.
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - Using device: mps
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - Starting training with parameters:
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - - Training directory: 50_speakers_audio_data
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - - Number of epochs: 10
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - - Batch size: 4
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - - Device: mps
+2025-04-23 11:24:01,749 - SteganographyTraining - INFO - Scanning directory 50_speakers_audio_data for WAV files...
+2025-04-23 11:24:01,753 - SteganographyTraining - INFO - Found 2511 potential WAV files for training
+2025-04-23 11:24:01,753 - SteganographyTraining - INFO - Dataset preparation took 0.00 seconds
+2025-04-23 11:24:01,753 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
+2025-04-23 11:24:01,753 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-23 12:16:21
+2025-04-23 11:24:03,036 - SteganographyTraining - INFO - Moth Encoder Architecture:
+MothEncoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=96000, bias=True)
+)
+2025-04-23 11:24:03,036 - SteganographyTraining - INFO - Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=1, bias=True)
+)
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - MPS detected. Using Apple Silicon GPU.
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - Using device: mps
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - Starting training with parameters:
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - - Training directory: 50_speakers_audio_data
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - - Number of epochs: 10
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - - Batch size: 4
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - - Device: mps
+2025-04-23 11:24:27,547 - SteganographyTraining - INFO - Scanning directory 50_speakers_audio_data for WAV files...
+2025-04-23 11:24:27,551 - SteganographyTraining - INFO - Found 2511 potential WAV files for training
+2025-04-23 11:24:27,551 - SteganographyTraining - INFO - Dataset preparation took 0.00 seconds
+2025-04-23 11:24:27,551 - SteganographyTraining - INFO - Estimated training time (approx): 0:52:20
+2025-04-23 11:24:27,551 - SteganographyTraining - INFO - Estimated completion time (approx): 2025-04-23 12:16:47
+2025-04-23 11:24:28,793 - SteganographyTraining - INFO - Moth Encoder Architecture:
+MothEncoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=96000, bias=True)
+)
+2025-04-23 11:24:28,793 - SteganographyTraining - INFO - Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 32, kernel_size=(8,), stride=(4,))
+  (conv2): Conv1d(32, 64, kernel_size=(8,), stride=(4,))
+  (conv3): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (fc1): Linear(in_features=191744, out_features=512, bias=True)
+  (fc2): Linear(in_features=512, out_features=1, bias=True)
+)
+2025-04-23 11:27:41,962 - SteganographyTraining - INFO - 
+Epoch 1/10:
+2025-04-23 11:27:41,962 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6955
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Average Detection Loss: 0.4740
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Epoch Time: 0:03:12
+2025-04-23 11:27:41,963 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:28:55
+2025-04-23 11:31:02,416 - SteganographyTraining - INFO - 
+Epoch 2/10:
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Epoch Time: 0:03:19
+2025-04-23 11:31:02,417 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:26:08
+2025-04-23 11:34:15,495 - SteganographyTraining - INFO - 
+Epoch 3/10:
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Epoch Time: 0:03:12
+2025-04-23 11:34:15,496 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:22:43
+2025-04-23 11:37:25,912 - SteganographyTraining - INFO - 
+Epoch 4/10:
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Epoch Time: 0:03:09
+2025-04-23 11:37:25,913 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:19:20
+2025-04-23 11:40:35,201 - SteganographyTraining - INFO - 
+Epoch 5/10:
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Epoch Time: 0:03:08
+2025-04-23 11:40:35,203 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:16:01
+2025-04-23 11:43:50,936 - SteganographyTraining - INFO - 
+Epoch 6/10:
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Epoch Time: 0:03:14
+2025-04-23 11:43:50,938 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:12:51
+2025-04-23 11:47:07,188 - SteganographyTraining - INFO - 
+Epoch 7/10:
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Epoch Time: 0:03:15
+2025-04-23 11:47:07,189 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:09:39
+2025-04-23 11:50:20,970 - SteganographyTraining - INFO - 
+Epoch 8/10:
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Epoch Time: 0:03:12
+2025-04-23 11:50:20,971 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:06:26
+2025-04-23 11:53:33,523 - SteganographyTraining - INFO - 
+Epoch 9/10:
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Epoch Time: 0:03:11
+2025-04-23 11:53:33,524 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:03:12
+2025-04-23 11:56:50,743 - SteganographyTraining - INFO - 
+Epoch 10/10:
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Batches Processed: 628
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Average Encoder Loss: 0.0332
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Average Decoder Loss: 0.6931
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Average Decoder Accuracy: 0.5000
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Average Perceptual Loss: 0.0000
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Average Detection Loss: 0.4741
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Epoch Time: 0:03:16
+2025-04-23 11:56:50,744 - SteganographyTraining - INFO - - Estimated Remaining Time: 0:00:00
+2025-04-23 11:56:52,891 - SteganographyTraining - INFO - Total training time: 0:32:25
+2025-04-23 11:56:52,892 - SteganographyTraining - INFO - Total files that failed to load: 0
