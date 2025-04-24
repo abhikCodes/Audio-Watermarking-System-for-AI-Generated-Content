@@ -37,7 +37,7 @@ UPLOAD_DIR.mkdir(exist_ok=True)
 PROCESSED_DIR.mkdir(exist_ok=True)
 
 # Initialize models
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "mps")
 moth_encoder = MothEncoder().to(device)
 bat_decoder = BatDecoder().to(device)
 
