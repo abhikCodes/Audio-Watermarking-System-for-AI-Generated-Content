@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,4 +44,100 @@ code {
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 300ms, transform 300ms;
+}
+
+.transparent-image {
+  background-color: transparent !important;
+}
+
+/* These styles will be applied by the component based on theme */
+.transparent-image-dark {
+  filter: invert(1);
+}
+
+.dark-mode-container {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.light-mode-container {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Make sure dark mode handles transparency correctly */
+@media (prefers-color-scheme: dark) {
+  .transparent-image {
+    mix-blend-mode: normal;
+  }
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #f5f5f5;
+}
+
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display {
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  audio::-webkit-media-controls-panel {
+    background-color: #333;
+  }
+  
+  audio::-webkit-media-controls-time-remaining-display,
+  audio::-webkit-media-controls-current-time-display {
+    color: #f5f5f5;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }

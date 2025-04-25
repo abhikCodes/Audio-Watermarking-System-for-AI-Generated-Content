@@ -22,8 +22,6 @@ import { motion } from 'framer-motion';
 
 // Import icons
 import MenuIcon from '@mui/icons-material/Menu';
-import BugReportIcon from '@mui/icons-material/BugReport';
-import SecurityIcon from '@mui/icons-material/Security';
 import HomeIcon from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -40,18 +38,18 @@ function App() {
     palette: {
       mode,
       primary: {
-        main: '#3f51b5',
-        light: '#757de8',
-        dark: '#002984',
+        main: '#000000',
+        light: '#333333',
+        dark: '#000000',
       },
       secondary: {
-        main: '#f50057',
-        light: '#ff5983',
-        dark: '#bb002f',
+        main: '#222222',
+        light: '#444444',
+        dark: '#111111',
       },
       background: {
-        default: mode === 'light' ? '#f9f9f9' : '#181a20',
-        paper: mode === 'light' ? '#ffffff' : '#23272f',
+        default: mode === 'light' ? '#f9f9f9' : '#121212',
+        paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
       },
       text: {
         primary: mode === 'light' ? '#333333' : '#f3f3f3',
@@ -91,10 +89,10 @@ function App() {
             },
           },
           containedPrimary: {
-            backgroundImage: 'linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%)',
+            backgroundImage: 'linear-gradient(135deg, #000000 0%, #333333 100%)',
           },
           containedSecondary: {
-            backgroundImage: 'linear-gradient(135deg, #f50057 0%, #ff4081 100%)',
+            backgroundImage: 'linear-gradient(135deg, #222222 0%, #444444 100%)',
           },
         },
       },
@@ -132,9 +130,42 @@ function App() {
     setDrawerOpen(open);
   };
 
+  // Custom icon components using the provided images
+  const MothIcon = ({ color = 'currentColor', ...props }) => (
+    <Box
+      component="img"
+      src="/images/moth.png"
+      alt="Moth"
+      className="transparent-image"
+      sx={{ 
+        width: 24, 
+        height: 24, 
+        filter: mode === 'dark' ? 'invert(1)' : 'none',
+        ...props.sx 
+      }}
+      {...props}
+    />
+  );
+
+  const BatIcon = ({ color = 'currentColor', ...props }) => (
+    <Box
+      component="img"
+      src="/images/bat.png"
+      alt="Bat"
+      className="transparent-image"
+      sx={{ 
+        width: 24, 
+        height: 24, 
+        filter: mode === 'dark' ? 'invert(1)' : 'none',
+        ...props.sx 
+      }}
+      {...props}
+    />
+  );
+
   const navItems = [
-    { name: 'Moth Encoder', path: '/', icon: <SecurityIcon /> },
-    { name: 'Bat Detector', path: '/bat-detector', icon: <BugReportIcon /> },
+    { name: 'Moth Encoder', path: '/', icon: <MothIcon /> },
+    { name: 'Bat Detector', path: '/bat-detector', icon: <BatIcon /> },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -146,7 +177,9 @@ function App() {
         minHeight: '100vh', 
         display: 'flex', 
         flexDirection: 'column',
-        background: theme.palette.background.default,
+        background: mode === 'light' 
+          ? 'linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 100%)' 
+          : 'linear-gradient(135deg, #121212 0%, #1a1a1a 100%)',
         backgroundAttachment: 'fixed',
       }}>
         <AppBar position="sticky" color="default" elevation={0}>
@@ -166,7 +199,17 @@ function App() {
                     gap: 1
                   }}
                 >
-                  <SecurityIcon sx={{ fontSize: 28 }} /> 
+                  <Box
+                    component="img"
+                    src="/images/batmoth.png"
+                    alt="Moth and Bat"
+                    className="transparent-image"
+                    sx={{ 
+                      height: 34,
+                      width: 'auto',
+                      filter: mode === 'dark' ? 'invert(1)' : 'none',
+                    }}
+                  />
                   Moth & Bat
                 </Typography>
               </Box>
@@ -234,7 +277,7 @@ function App() {
                   sx={{ 
                     borderRadius: '10px', 
                     mx: 1, 
-                    backgroundColor: isActive(item.path) ? 'rgba(63, 81, 181, 0.08)' : 'transparent',
+                    backgroundColor: isActive(item.path) ? 'rgba(0, 0, 0, 0.08)' : 'transparent',
                   }}
                 >
                   <ListItemIcon sx={{ color: isActive(item.path) ? 'primary.main' : 'text.secondary' }}>
@@ -253,28 +296,10 @@ function App() {
           </Box>
         </Drawer>
         
-        <Container maxWidth="lg" sx={{ flex: 1 }}>
+        <Container component="main" sx={{ flexGrow: 1, py: 3, display: 'flex', flexDirection: 'column' }}>
           <Routes>
-            <Route path="/" element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-              >
-                <MothPage />
-              </motion.div>
-            } />
-            <Route path="/bat-detector" element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-              >
-                <BatPage />
-              </motion.div>
-            } />
+            <Route path="/" element={<MothPage />} />
+            <Route path="/bat-detector" element={<BatPage />} />
           </Routes>
         </Container>
         
@@ -283,9 +308,10 @@ function App() {
           sx={{ 
             p: 4, 
             mt: 'auto', 
-            bgcolor: 'background.paper', 
+            bgcolor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(24,26,32,0.7)',
             textAlign: 'center',
             borderTop: '1px solid rgba(0, 0, 0, 0.05)',
+            backdropFilter: 'blur(8px)',
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, mb: 2 }}>

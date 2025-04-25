@@ -14,6 +14,9 @@ import sys
 # Add project root to path to import models
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
+# Get absolute path to project root for model loading
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+
 # Import models
 from models.moth.encoder import MothEncoder
 from models.bat.decoder import BatDecoder
@@ -21,18 +24,19 @@ from models.bat.decoder import BatDecoder
 app = FastAPI(title="Audio Steganography API", 
               description="API for processing audio clips with steganography models")
 
-# CORS middleware setup
+# CORS middleware setup with specific origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For development; restrict in production
+    allow_origins="*",  # Frontend URLs
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["Content-Disposition"],
 )
 
 # Create directories for storing uploads and processed files
-UPLOAD_DIR = Path("./uploads")
-PROCESSED_DIR = Path("./processed")
+UPLOAD_DIR = Path("../uploads")
+PROCESSED_DIR = Path("../processed")
 UPLOAD_DIR.mkdir(exist_ok=True)
 PROCESSED_DIR.mkdir(exist_ok=True)
 
@@ -41,9 +45,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 moth_encoder = MothEncoder().to(device)
 bat_decoder = BatDecoder().to(device)
 
-# Model paths matching the inference notebook
-ENCODER_MODEL_PATH = '../../models/moth/moth_model.pth'
-DECODER_MODEL_PATH = '../../models/bat/bat_model.pth'
+# Model paths using absolute paths based on project root
+ENCODER_MODEL_PATH = os.path.join(PROJECT_ROOT, 'models/moth/moth_model.pth')
+DECODER_MODEL_PATH = os.path.join(PROJECT_ROOT, 'models/bat/bat_model.pth')
 
 # Try to load model weights if available
 try:
