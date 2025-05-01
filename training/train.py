@@ -12,6 +12,8 @@ from tqdm import tqdm
 import logging
 import sys
 import os
+import shutil
+from pathlib import Path
 
 # Add the project root directory to Python path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -148,12 +150,31 @@ def train_models(train_dir, device_str=None):
     # --------------------------
 
     # Log training parameters
-    logger.info(f"Starting training with parameters:")
+    logger.info("Starting training with parameters:")
     logger.info(f"- Training directory: {train_dir}")
     logger.info(f"- Number of epochs: {num_epochs}")
     logger.info(f"- Batch size: {batch_size}")
     logger.info(f"- Device: {device}")
+    logger.info(f"- Loss function: {settings.LOSS_FUNCTION.value}")
     
+    # Create model save directories
+    loss_type = settings.LOSS_FUNCTION.value
+    
+    try:
+        # Create only the final models directories - nothing else
+        final_models_dir = Path("final_models")
+        final_moth_dir = final_models_dir / loss_type / "moth"
+        final_bat_dir = final_models_dir / loss_type / "bat"
+        
+        # Create minimum directories needed
+        os.makedirs(final_moth_dir, exist_ok=True)
+        os.makedirs(final_bat_dir, exist_ok=True)
+        
+        logger.info(f"Created model directories successfully")
+    except OSError as e:
+        logger.error(f"Failed to create model directories: {e}")
+        logger.info("Will attempt to continue without saving models")
+
     # Create dataset and dataloader
     start_time = time.time()
     dataset = AudioDataset(train_dir)
@@ -244,6 +265,8 @@ def train_models(train_dir, device_str=None):
             decoder_loss = (loss_original + loss_watermarked) / 2
             # No need to retain graph here as we recalculate for encoder
             decoder_loss.backward()
+            # Add gradient clipping to prevent exploding gradients
+            torch.nn.utils.clip_grad_norm_(decoder.parameters(), max_norm=1.0)
             decoder_optimizer.step()
             
             # Train Encoder
@@ -259,7 +282,14 @@ def train_models(train_dir, device_str=None):
             # --- Encoder: Compute Loss, Backward and Step ---
             encoder_loss, metrics = encoder.compute_loss(audio, watermarked_enc, pred_watermarked_enc)
             encoder_loss.backward()
+            # Add gradient clipping to prevent exploding gradients
+            torch.nn.utils.clip_grad_norm_(encoder.parameters(), max_norm=1.0)
             encoder_optimizer.step()
+            
+            # Skip batch if NaN values detected in loss
+            if torch.isnan(torch.tensor(encoder_loss.item())) or torch.isnan(torch.tensor(decoder_loss.item())):
+                logger.warning(f"NaN loss detected in batch {batch_idx}, skipping update")
+                continue
             
             # Update metrics
             total_encoder_loss += metrics['total_loss']
@@ -268,12 +298,14 @@ def train_models(train_dir, device_str=None):
             total_perceptual_loss += metrics['perceptual_loss']
             total_detection_loss += metrics['detection_loss']
             
-            # Update progress bar
+            # Update progress bar with cleaner format
             progress_bar.set_postfix({
-                'encoder_loss': f'{metrics["total_loss"]:.4f}',
-                'decoder_loss': f'{decoder_loss.item():.4f}',
-                'decoder_acc': f'{((acc_original + acc_watermarked) / 2):.4f}'
+                'enc_loss': f'{metrics["total_loss"]:.6f}',
+                'dec_loss': f'{decoder_loss.item():.6f}',
+                'dec_acc': f'{((acc_original + acc_watermarked) / 2):.4f}'
             })
+            
+            # No per-epoch model saving to conserve disk space
         
         # Check if any batches were processed
         if batches_processed == 0:
@@ -308,13 +340,22 @@ def train_models(train_dir, device_str=None):
         logger.info(f"- Epoch Time: {str(datetime.timedelta(seconds=int(epoch_time)))}")
         logger.info(f"- Estimated Remaining Time: {str(datetime.timedelta(seconds=int(estimated_remaining_time)))}")
         
-        # Save models after each epoch
-        torch.save(encoder.state_dict(), f'models/moth/moth_model_epoch_{epoch+1}.pth')
-        torch.save(decoder.state_dict(), f'models/bat/bat_model_epoch_{epoch+1}.pth')
+        # No per-epoch model saving to conserve disk space
     
-    # Save final models
-    torch.save(encoder.state_dict(), 'models/moth/moth_model.pth')
-    torch.save(decoder.state_dict(), 'models/bat/bat_model.pth')
+    # After all epochs are done, save only the final models
+    try:
+        # Save only final models
+        logger.info("Training complete, saving final models...")
+        final_models_dir = Path("final_models")
+        final_moth_dir = final_models_dir / loss_type / "moth"
+        final_bat_dir = final_models_dir / loss_type / "bat"
+        
+        # Save models
+        torch.save(encoder.state_dict(), final_moth_dir / 'moth_model.pth')
+        torch.save(decoder.state_dict(), final_bat_dir / 'bat_model.pth')
+        logger.info(f"Final models saved successfully to final_models/{loss_type}/")
+    except (OSError, RuntimeError) as e:
+        logger.error(f"Failed to save models: {e}")
     
     # Log total training time and failed loads
     total_training_time = time.time() - start_time

@@ -11,3 +11,6 @@ models/**/*.pt
 models/**/*.ckpt
 *.pth
 *.wav
+*.jpg
+*.png
+*.jpeg
