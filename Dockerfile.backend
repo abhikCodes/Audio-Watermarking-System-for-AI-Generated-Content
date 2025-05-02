@@ -17,6 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
 COPY backend/ /app/backend/
+COPY models/ /app/models/ 
 COPY final_models/ /app/final_models/
 
 # Create necessary directories

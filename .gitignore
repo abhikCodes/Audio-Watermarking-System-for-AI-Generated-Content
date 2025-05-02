@@ -1,14 +1,17 @@
+__pycache__
 ./venv
 /venv
 /Encoder_Decoder_Improved.ipynb
 /50_speakers_audio_data
 /frontend/node_modules
 /frontend/build
+configuration/**/__pycache__/*
 .DS_Store
 models/**/__pycache__/*
 models/**/*.pth
 models/**/*.pt
 models/**/*.ckpt
+/output/*
 *.pth
 *.wav
 *.jpg

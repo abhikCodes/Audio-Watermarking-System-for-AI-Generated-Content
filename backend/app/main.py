@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 import shutil
@@ -27,7 +27,7 @@ app = FastAPI(title="Audio Steganography API",
 # CORS middleware setup with specific origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="*",  # Frontend URLs
+    allow_origins="*",  
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
@@ -35,87 +35,94 @@ app.add_middleware(
 )
 
 # Create directories for storing uploads and processed files
-UPLOAD_DIR = Path("../uploads")
-PROCESSED_DIR = Path("../processed")
+UPLOAD_DIR = Path(PROJECT_ROOT) / 'uploads'
+PROCESSED_DIR = Path(PROJECT_ROOT) / 'processed'
 UPLOAD_DIR.mkdir(exist_ok=True)
 PROCESSED_DIR.mkdir(exist_ok=True)
 
-# Initialize models
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-moth_encoder = MothEncoder().to(device)
-bat_decoder = BatDecoder().to(device)
+# Model folders per loss
+LOSS_DIRS = {
+    'mse': 'mse',
+    'spectrogram': 'spectrogram',
+    'log_mel': 'log_mel',
+    'psychoacoustic': 'psychoacoustic',
+}
 
-# Model paths using absolute paths based on project root
-ENCODER_MODEL_PATH = os.path.join(PROJECT_ROOT, 'models/moth/moth_model.pth')
-DECODER_MODEL_PATH = os.path.join(PROJECT_ROOT, 'models/bat/bat_model.pth')
 
-# Try to load model weights if available
-try:
-    if os.path.exists(ENCODER_MODEL_PATH):
-        moth_encoder.load_state_dict(torch.load(ENCODER_MODEL_PATH, map_location=device))
-        moth_encoder.eval()
-        print(f"Loaded Moth Encoder weights from {ENCODER_MODEL_PATH}")
-    else:
-        print(f"Warning: Model file {ENCODER_MODEL_PATH} does not exist")
-        print("Using untrained Moth Encoder - this is expected during development but won't provide optimal results")
-except Exception as e:
-    print(f"Could not load Moth Encoder weights: {e}")
-    print("Using untrained Moth Encoder - functionality will be limited")
+def load_models(loss_fn: str):
+    if loss_fn not in LOSS_DIRS:
+        raise HTTPException(status_code=400, detail=f"Unsupported loss function '{loss_fn}'")
+    
+    # Load models based on the loss function
+    base = Path(PROJECT_ROOT) / 'final_models' / LOSS_DIRS[loss_fn]
 
-try:
-    if os.path.exists(DECODER_MODEL_PATH):
-        bat_decoder.load_state_dict(torch.load(DECODER_MODEL_PATH, map_location=device))
-        bat_decoder.eval()
-        print(f"Loaded Bat Decoder weights from {DECODER_MODEL_PATH}")
-    else:
-        print(f"Warning: Model file {DECODER_MODEL_PATH} does not exist")
-        print("Using untrained Bat Decoder - this is expected during development but won't provide optimal results")
-except Exception as e:
-    print(f"Could not load Bat Decoder weights: {e}")
-    print("Using untrained Bat Decoder - functionality will be limited")
+    enc_path = base / 'moth' / 'moth_model.pth'
+    dec_path = base / 'bat' / 'bat_model.pth'
+
+    if not enc_path.exists() or not dec_path.exists():
+        raise HTTPException(status_code=500, detail=f"Model for '{loss_fn}' not found")
+    
+    # Initialize models
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    encoder = MothEncoder().to(device)
+    decoder = BatDecoder().to(device)
+
+    encoder.load_state_dict(torch.load(enc_path, map_location=device))
+    decoder.load_state_dict(torch.load(dec_path, map_location=device))
+
+    encoder.eval()
+    decoder.eval()
+
+    return encoder, decoder, device
+
 
 @app.get("/")
 async def root():
-    return {"message": "Audio Steganography API is running"}
+    return {
+        "message": "Audio Steganography API is running", 
+        "supported_loss_functions": list(LOSS_DIRS.keys())
+    }
 
 @app.post("/process-audio/")
-async def process_audio(file: UploadFile = File(...)):
+async def process_audio(file: UploadFile = File(...), loss_function: str = 'mse'):
     """
     Process an audio file with the Moth Encoder model.
     Returns the processed audio file path.
     """
-    if not file.filename.endswith(('.wav', '.mp3')):
+    if not file.filename.lower().endswith(('.wav', '.mp3')):
         raise HTTPException(status_code=400, detail="Only .wav or .mp3 files are supported")
     
+    encoder, _, device = load_models(loss_function)
+
     # Save uploaded file
     file_id = str(uuid.uuid4())
     temp_path = UPLOAD_DIR / f"{file_id}_{file.filename}"
-    
-    with open(temp_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
+
+    with open(temp_path, 'wb') as buf: 
+        shutil.copyfileobj(file.file, buf)
+
     
     # Process the audio file
     try:
         # Load audio
         audio, sr = sf.read(temp_path)
-        
-        # Ensure audio is mono
-        if len(audio.shape) > 1:
+
+        if audio.ndim > 1: 
             audio = np.mean(audio, axis=1)
         
         # Ensure length is appropriate (trim or pad)
         target_length = 96000  # 6 seconds at 16kHz
-        if len(audio) > target_length:
-            audio = audio[:target_length]
+        if len(audio) > target_length: 
+            audio = audio[:target_length] 
         elif len(audio) < target_length:
-            audio = np.pad(audio, (0, target_length - len(audio)), mode='constant')
+            audio = np.pad(audio, (0, target_length - len(audio)), 'constant')
         
         # Prepare for model
         audio_tensor = torch.tensor(audio, dtype=torch.float32).unsqueeze(0).unsqueeze(0).to(device)
         
         # Process with Moth encoder
         with torch.no_grad():
-            perturbation = moth_encoder(audio_tensor)
+            perturbation = encoder(audio_tensor)
             watermarked_audio = audio_tensor + perturbation
         
         # Convert back to numpy and save
@@ -129,7 +136,8 @@ async def process_audio(file: UploadFile = File(...)):
             "message": "Audio processed successfully",
             "file_id": file_id,
             "original_filename": file.filename,
-            "processed_filename": f"watermarked_{file_id}_{file.filename}"
+            "processed_filename": f"watermarked_{file_id}_{file.filename}",
+            "loss_function": loss_function
         }
     
     except Exception as e:
@@ -147,13 +155,15 @@ async def download_processed(file_id: str, filename: str):
     return FileResponse(path=file_path, filename=f"watermarked_{filename}", media_type="audio/wav")
 
 @app.post("/detect-watermark/")
-async def detect_watermark(file: UploadFile = File(...)):
+async def detect_watermark(file: UploadFile = File(...), loss_function: str = 'mse'):
     """
     Detect if an audio file has a watermark using the Bat Decoder.
     """
-    if not file.filename.endswith(('.wav', '.mp3')):
+    if not file.filename.lower().endswith(('.wav', '.mp3')):
         raise HTTPException(status_code=400, detail="Only .wav or .mp3 files are supported")
     
+    _, decoder, device = load_models(loss_function)
+
     # Save uploaded file
     file_id = str(uuid.uuid4())
     temp_path = UPLOAD_DIR / f"{file_id}_{file.filename}"
@@ -167,22 +177,22 @@ async def detect_watermark(file: UploadFile = File(...)):
         audio, sr = sf.read(temp_path)
         
         # Ensure audio is mono
-        if len(audio.shape) > 1:
+        if audio.ndim > 1: 
             audio = np.mean(audio, axis=1)
         
         # Ensure length is appropriate (trim or pad)
         target_length = 96000  # 6 seconds at 16kHz
-        if len(audio) > target_length:
+        if len(audio) > target_length: 
             audio = audio[:target_length]
         elif len(audio) < target_length:
-            audio = np.pad(audio, (0, target_length - len(audio)), mode='constant')
+            audio = np.pad(audio, (0, target_length - len(audio)), 'constant')
         
         # Prepare for model
         audio_tensor = torch.tensor(audio, dtype=torch.float32).unsqueeze(0).unsqueeze(0).to(device)
         
         # Detect with Bat decoder
         with torch.no_grad():
-            detection = bat_decoder(audio_tensor)
+            detection = decoder(audio_tensor)
         
         watermark_probability = float(detection.item())
         
@@ -191,7 +201,8 @@ async def detect_watermark(file: UploadFile = File(...)):
             "file_id": file_id,
             "original_filename": file.filename,
             "watermark_probability": watermark_probability,
-            "is_watermarked": watermark_probability > 0.5
+            "is_watermarked": watermark_probability > 0.5,
+            "loss_function": loss_function
         }
     
     except Exception as e:

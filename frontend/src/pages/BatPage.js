@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
-import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme } from '@mui/material';
+import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import AudioUpload from '../components/AudioUpload';
 import axios from 'axios';
 import DownloadIcon from '@mui/icons-material/Download';
 import SearchIcon from '@mui/icons-material/Search';
+
+const LOSS_OPTIONS = [
+  { value: 'mse',             label: 'MSE'     },
+  { value: 'spectrogram',     label: 'Spectrogram'     },
+  { value: 'log_mel',         label: 'Log-Mel'         },
+  { value: 'psychoacoustic',  label: 'Psychoacoustic'  },
+];
 
 // API base URL - update this to match your backend URL
 const API_BASE_URL = 'http://localhost:8001';
 
 const BatPage = () => {
   const [audioFile, setAudioFile] = useState(null);
+  const [lossFunction, setLossFunction] = useState('mse');
   const [detectionResult, setDetectionResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -38,7 +46,7 @@ const BatPage = () => {
       formData.append('file', audioFile); // 'file' matches the parameter name in FastAPI
       
       // Call the actual backend API
-      const response = await axios.post(`${API_BASE_URL}/detect-watermark/`, formData, {
+      const response = await axios.post(`${API_BASE_URL}/detect-watermark?loss_function=${lossFunction}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       
@@ -108,6 +116,21 @@ const BatPage = () => {
               }} 
             />
           </Box>
+
+          <FormControl fullWidth sx={{ mb:2 }}>
+            <InputLabel id="bat-loss-select-label">Loss Function</InputLabel>
+            <Select
+              labelId="bat-loss-select-label"
+              value={lossFunction}
+              label="Loss Function"
+              onChange={e => setLossFunction(e.target.value)}>
+              {LOSS_OPTIONS.map(o => (
+                <MenuItem key={o.value} value={o.value}>
+                  {o.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
           
           <AudioUpload 
             onAudioUploaded={handleAudioUploaded} 
