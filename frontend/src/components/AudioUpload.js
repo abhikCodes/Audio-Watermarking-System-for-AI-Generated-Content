@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Box, Typography, Button, CircularProgress } from '@mui/material';
+import { Box, Typography, CircularProgress } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 // Import the default export from wavesurfer.js
@@ -11,6 +11,7 @@ const AudioUpload = ({ onAudioUploaded, isLoading = false, label = "Upload Audio
   const waveformRef = useRef(null);
   const wavesurferRef = useRef(null);
   const audioRef = useRef(null);
+  const audioUrlRef = useRef(null);
 
   const onDrop = (acceptedFiles) => {
     const selectedFile = acceptedFiles[0];
@@ -21,6 +22,7 @@ const AudioUpload = ({ onAudioUploaded, isLoading = false, label = "Upload Audio
     setError('');
     setFile(selectedFile);
     const audioUrl = URL.createObjectURL(selectedFile);
+    audioUrlRef.current = audioUrl;
     if (waveformRef.current) {
       if (wavesurferRef.current) {
         wavesurferRef.current.destroy();
@@ -55,11 +57,11 @@ const AudioUpload = ({ onAudioUploaded, isLoading = false, label = "Upload Audio
       if (wavesurferRef.current) {
         wavesurferRef.current.destroy();
       }
-      if (file) {
-        URL.revokeObjectURL(audioRef.current?.src);
+      if (audioUrlRef.current) {
+        URL.revokeObjectURL(audioUrlRef.current);
       }
     };
-  }, [file]);
+  }, []);
 
   return (
     <Box sx={{ width: '100%' }}>

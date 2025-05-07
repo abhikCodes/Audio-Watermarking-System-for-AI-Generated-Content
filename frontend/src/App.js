@@ -18,11 +18,9 @@ import {
   useMediaQuery,
   Divider
 } from '@mui/material';
-import { motion } from 'framer-motion';
 
 // Import icons
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';

@@ -1,0 +1,9 @@
+sample_rate: 16000            # resample target, keeps things fast
+slice_seconds: 10             # train on 10-second excerpts
+batch_size: 2
+num_epochs: 2
+lr: 1.0e-4
+distortion_lambda: 10.0       # weight on audio-fidelity loss
+alpha: 0.02                   # max absolute amplitude of injected watermark
+data_root: 50_speakers_audio_data
+exp_dir: exp/moth_bat_watermark 

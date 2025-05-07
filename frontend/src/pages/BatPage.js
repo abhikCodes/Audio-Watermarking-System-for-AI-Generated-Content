@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Paper, useTheme, alpha } from '@mui/material';
 import AudioUpload from '../components/AudioUpload';
 import axios from 'axios';
@@ -16,28 +16,13 @@ const BatPage = () => {
   const [success, setSuccess] = useState('');
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
-  const uploadedAudioUrl = useRef(null);
-
-  useEffect(() => {
-    // Cleanup uploaded audio URL
-    return () => {
-      if (uploadedAudioUrl.current) {
-        URL.revokeObjectURL(uploadedAudioUrl.current);
-        uploadedAudioUrl.current = null;
-      }
-    };
-  }, [audioFile]);
 
   const handleAudioUploaded = (file) => {
-    if (uploadedAudioUrl.current) {
-      URL.revokeObjectURL(uploadedAudioUrl.current);
-    }
     setAudioFile(file);
     setDetectionResult(null);
     setError('');
     setSuccess('');
     setLoading(false);
-    uploadedAudioUrl.current = URL.createObjectURL(file);
   };
 
   const handleDetect = async () => {
@@ -73,18 +58,6 @@ const BatPage = () => {
       setError('Failed to analyze audio. ' + (err.response?.data?.detail || err.message));
       setLoading(false);
     }
-  };
-
-  const handleReset = () => {
-    if (uploadedAudioUrl.current) {
-      URL.revokeObjectURL(uploadedAudioUrl.current);
-      uploadedAudioUrl.current = null;
-    }
-    setAudioFile(null);
-    setDetectionResult(null);
-    setError('');
-    setSuccess('');
-    setLoading(false);
   };
 
   return (
@@ -173,15 +146,6 @@ const BatPage = () => {
           
           {detectionResult && (
             <Box sx={{ mt: 4, p: 3, bgcolor: 'rgba(255, 255, 255, 0.5)', borderRadius: 2, border: '1px solid', borderColor: 'divider', backdropFilter: 'blur(5px)' }}>
-              <Button
-                variant="outlined"
-                color="secondary"
-                fullWidth
-                sx={{ mb: 2 }}
-                onClick={handleReset}
-              >
-                Reset
-              </Button>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, textAlign: 'center' }}>
                 Detection Results
               </Typography>
@@ -223,7 +187,7 @@ const BatPage = () => {
                 }}>
                   <CardContent>
                     <Box sx={{ mb: 2 }}>
-                      <audio controls style={{ width: '100%' }} src={uploadedAudioUrl.current} />
+                      <audio controls style={{ width: '100%' }} src={URL.createObjectURL(audioFile)} />
                     </Box>
                     <Button
                       variant="outlined"
@@ -233,7 +197,7 @@ const BatPage = () => {
                       startIcon={<DownloadIcon />}
                       onClick={() => {
                         const link = document.createElement('a');
-                        link.href = uploadedAudioUrl.current;
+                        link.href = URL.createObjectURL(audioFile);
                         link.download = 'analyzed_audio.wav';
                         document.body.appendChild(link);
                         link.click();
