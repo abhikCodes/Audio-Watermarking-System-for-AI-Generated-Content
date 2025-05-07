@@ -1,15 +1,3 @@
-**Fixing the text**
-
-The user has asked for a fixed version of the text. It’s clear they want a polished, corrected output without creating a separate document. I’ll focus on fixing spelling, grammar, punctuation, and clarity. The original text would look something like this after revision:
-
-"Hi there, thank you for taking the time to look through our project. This project has taken a lot of time and testing. We have done our best to present it in a way that you can enjoy as much as we enjoyed making it."
-
-There we go!
-
-
-Thought for 9 seconds
-
-
 Hi there—thanks for taking the time to look through our project! It’s taken a lot of testing and refinement, and we’ve done our best to present everything so you can enjoy it as much as we enjoyed building it.
 
 You should see two  folders these are application:
