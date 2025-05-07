@@ -13,4 +13,9 @@ docker compose up
 
 The remaining files relate to training the model; you’ll find detailed information in **`training.py`**.
 
+
+Dataset Link: https://www.kaggle.com/datasets/vjcalling/speaker-recognition-audio-dataset
+
+Model-Drive Link: https://drive.google.com/drive/folders/14u7cjH1iIUYMrRxNgO4-4FBQ-zzCxrkA?usp=drive_link
+
 Happy reading, and have a sunny day ahead!

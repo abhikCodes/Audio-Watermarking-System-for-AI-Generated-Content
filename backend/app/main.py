@@ -12,7 +12,7 @@ from pathlib import Path
 import sys
 from datetime import datetime
 
-# Import local models
+# import local models
 from app.models.models import MothEncoder, BatDetector
 from app.utils.audio_utils import load_audio, save_audio, process_audio_for_model
 
@@ -29,7 +29,7 @@ app.add_middleware(
     expose_headers=["Content-Disposition"],
 )
 
-# Create directories for storing uploads and processed files
+# directories for storing uploads and processed files
 UPLOAD_DIR = Path("uploads")
 PROCESSED_DIR = Path("processed")
 UPLOAD_DIR.mkdir(exist_ok=True)
@@ -41,12 +41,12 @@ TARGET_LENGTH = 480000  # 30 seconds at 16kHz
 ALPHA = 0.1  # Watermark strength
 MODEL_DIR = "app/working_model"
 
-# Initialize models
+# model initialization
 device = "cuda" if torch.cuda.is_available() else "cpu"
 moth = MothEncoder(ALPHA).to(device)
 bat = BatDetector().to(device)
 
-# Load model weights
+# model weights
 moth.load_state_dict(torch.load(os.path.join(MODEL_DIR, "moth_final.ckpt"), map_location=device))
 bat.load_state_dict(torch.load(os.path.join(MODEL_DIR, "bat_final.ckpt"), map_location=device))
 
