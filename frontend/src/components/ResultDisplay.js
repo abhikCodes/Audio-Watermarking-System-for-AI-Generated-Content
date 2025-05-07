@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Paper, Typography, LinearProgress, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import { alpha } from '@mui/material';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 const ResultDisplay = ({ 
@@ -26,7 +27,8 @@ const ResultDisplay = ({
         borderRadius: 3,
         position: 'relative',
         overflow: 'hidden',
-        bgcolor: '#fff',
+        // bgcolor: '#fff',
+        bgcolor: 'background.paper',
       }}
     >
       {/* Background decorative element */}
@@ -38,7 +40,8 @@ const ResultDisplay = ({
           width: 200, 
           height: 200, 
           borderRadius: '50%', 
-          background: `radial-gradient(circle, ${resultColor}20 0%, transparent 70%)`,
+          // background: `radial-gradient(circle, ${resultColor}20 0%, transparent 70%)`,
+          background: theme => `radial-gradient(circle, ${alpha(resultColor, 0.2)} 0%, transparent 70%)`,
           zIndex: 0
         }} 
       />

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem, alpha } from '@mui/material';
 import AudioUpload from '../components/AudioUpload';
 import axios from 'axios';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -91,7 +91,8 @@ const MothPage = () => {
           mb: 4,
           borderRadius: '20px',
           p: 3,
-          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          // backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          backgroundColor: theme => alpha(theme.palette.background.paper, 0.7),
           backdropFilter: 'blur(10px)',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
           overflow: 'hidden'
@@ -131,7 +132,7 @@ const MothPage = () => {
                 }
               }} 
             />
-          </Box>
+        </Box>
 
           <FormControl fullWidth sx={{ mb:2 }}>
             <InputLabel id="moth-loss-select-label">Loss Function</InputLabel>

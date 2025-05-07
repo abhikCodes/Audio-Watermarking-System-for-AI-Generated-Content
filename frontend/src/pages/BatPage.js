@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem, alpha } from '@mui/material';
 import AudioUpload from '../components/AudioUpload';
 import axios from 'axios';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -75,7 +75,9 @@ const BatPage = () => {
           mb: 4,
           borderRadius: '20px',
           p: 3,
-          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          // backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          backgroundColor: theme => alpha(theme.palette.background.paper, 0.7),
+          // backgroundColor: theme => alpha('#000000', 0.7),
           backdropFilter: 'blur(10px)',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
           overflow: 'hidden'
@@ -173,10 +175,12 @@ const BatPage = () => {
               
               <Box sx={{ 
                 p: 3, 
-                bgcolor: detectionResult.isAIGenerated ? 'rgba(244, 67, 54, 0.08)' : 'rgba(76, 175, 80, 0.08)', 
+                // bgcolor: detectionResult.isAIGenerated ? 'rgba(244, 67, 54, 0.08)' : 'rgba(76, 175, 80, 0.08)', 
+                bgcolor: theme => detectionResult.isAIGenerated ? alpha(theme.palette.error.main, 0.1) : alpha(theme.palette.success.main, 0.1),
                 borderRadius: 2,
                 border: '1px solid',
-                borderColor: detectionResult.isAIGenerated ? 'rgba(244, 67, 54, 0.5)' : 'rgba(76, 175, 80, 0.5)',
+                // borderColor: detectionResult.isAIGenerated ? 'rgba(244, 67, 54, 0.5)' : 'rgba(76, 175, 80, 0.5)',
+                borderColor: theme => detectionResult.isAIGenerated ? alpha(theme.palette.error.main, 0.5) : alpha(theme.palette.success.main, 0.5),
                 textAlign: 'center',
                 mb: 3,
                 boxShadow: '0 4px 12px rgba(0,0,0,0.05)',

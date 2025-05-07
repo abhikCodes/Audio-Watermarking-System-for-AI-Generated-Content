@@ -47,9 +47,13 @@ function App() {
         light: '#444444',
         dark: '#111111',
       },
+      // background: {
+      //   default: mode === 'light' ? '#f9f9f9' : '#121212',
+      //   paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
+      // },
       background: {
-        default: mode === 'light' ? '#f9f9f9' : '#121212',
-        paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
+        default: mode === 'light' ? '#f9f9f9' : '#000000',
+        paper: mode === 'light' ? '#ffffff' : '#000000',
       },
       text: {
         primary: mode === 'light' ? '#333333' : '#f3f3f3',
@@ -70,7 +74,8 @@ function App() {
           root: {
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)',
             backdropFilter: 'blur(8px)',
-            backgroundColor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(24,26,32,0.9)',
+            // backgroundColor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(24,26,32,0.9)',
+            backgroundColor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(0, 0, 0, 0.9)',
             color: mode === 'light' ? '#333333' : '#f3f3f3',
           },
         },
@@ -115,6 +120,14 @@ function App() {
           },
         },
       },
+      MuiMenu: {
+             styleOverrides: {
+               paper: ({ ownerState, theme }) => ({
+                 // force every Menu’s paper to use solid background
+                 backgroundColor: theme.palette.background.paper,
+               }),
+             },
+           },
     },
     shape: {
       borderRadius: 12,
@@ -193,7 +206,7 @@ function App() {
                   sx={{ 
                     fontWeight: 700, 
                     textDecoration: 'none',
-                    color: 'primary.main',
+                    color: 'text.primary',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1
@@ -219,7 +232,8 @@ function App() {
               {isMobile ? (
                 <IconButton 
                   edge="end" 
-                  color="primary" 
+                  // color="primary" 
+                  color="inherit"
                   aria-label="menu"
                   onClick={toggleDrawer(true)}
                 >
@@ -232,7 +246,7 @@ function App() {
                       key={item.path}
                       component={Link}
                       to={item.path}
-                      color="primary"
+                      color="inherit"
                       startIcon={item.icon}
                       variant={isActive(item.path) ? "contained" : "text"}
                       sx={{ 
@@ -308,18 +322,26 @@ function App() {
           sx={{ 
             p: 4, 
             mt: 'auto', 
-            bgcolor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(24,26,32,0.7)',
+            bgcolor: mode === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(0, 0, 0, 0.8)',
             textAlign: 'center',
             borderTop: '1px solid rgba(0, 0, 0, 0.05)',
             backdropFilter: 'blur(8px)',
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, mb: 2 }}>
-            <IconButton color="primary" aria-label="github repository" component="a" href="#" target="_blank">
+            <IconButton 
+              color="primary" 
+              sx={{
+                color: mode === 'dark' ? 'common.white' : 'primary.main',
+              }}
+              aria-label="github repository" 
+              component="a" 
+              href="#" 
+              target="_blank">
               <GitHubIcon />
             </IconButton>
           </Box>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.primary">
             Yash & Abhik © {new Date().getFullYear()}
           </Typography>
         </Box>
