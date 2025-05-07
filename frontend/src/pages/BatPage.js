@@ -1,35 +1,43 @@
-import React, { useState } from 'react';
-import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem, alpha } from '@mui/material';
+import React, { useState, useRef, useEffect } from 'react';
+import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Paper, useTheme, alpha } from '@mui/material';
 import AudioUpload from '../components/AudioUpload';
 import axios from 'axios';
 import DownloadIcon from '@mui/icons-material/Download';
 import SearchIcon from '@mui/icons-material/Search';
 
-const LOSS_OPTIONS = [
-  { value: 'mse',             label: 'MSE'     },
-  { value: 'spectrogram',     label: 'Spectrogram'     },
-  { value: 'log_mel',         label: 'Log-Mel'         },
-  { value: 'psychoacoustic',  label: 'Psychoacoustic'  },
-];
-
 // API base URL - update this to match your backend URL
-const API_BASE_URL = 'http://localhost:8001';
+const API_BASE_URL = 'http://localhost:8000';
 
 const BatPage = () => {
   const [audioFile, setAudioFile] = useState(null);
-  const [lossFunction, setLossFunction] = useState('mse');
   const [detectionResult, setDetectionResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
+  const uploadedAudioUrl = useRef(null);
+
+  useEffect(() => {
+    // Cleanup uploaded audio URL
+    return () => {
+      if (uploadedAudioUrl.current) {
+        URL.revokeObjectURL(uploadedAudioUrl.current);
+        uploadedAudioUrl.current = null;
+      }
+    };
+  }, [audioFile]);
 
   const handleAudioUploaded = (file) => {
+    if (uploadedAudioUrl.current) {
+      URL.revokeObjectURL(uploadedAudioUrl.current);
+    }
     setAudioFile(file);
     setDetectionResult(null);
     setError('');
     setSuccess('');
+    setLoading(false);
+    uploadedAudioUrl.current = URL.createObjectURL(file);
   };
 
   const handleDetect = async () => {
@@ -43,18 +51,19 @@ const BatPage = () => {
     setDetectionResult(null);
     try {
       const formData = new FormData();
-      formData.append('file', audioFile); // 'file' matches the parameter name in FastAPI
+      formData.append('file', audioFile);
       
-      // Call the actual backend API
-      const response = await axios.post(`${API_BASE_URL}/detect-watermark?loss_function=${lossFunction}`, formData, {
+      // Call the detect endpoint
+      const response = await axios.post(`${API_BASE_URL}/detect`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       
       // Process the response
       const resultData = response.data;
       setDetectionResult({
-        isAIGenerated: resultData.is_watermarked,
-        source: resultData.is_watermarked ? "Moth AI Watermark" : "Natural or Unwatermarked Audio"
+        isAIGenerated: resultData.has_watermark,
+        confidence: resultData.confidence,
+        source: resultData.has_watermark ? "Moth AI Watermark" : "Natural or Unwatermarked Audio"
       });
       
       setSuccess('Audio analysis complete!');
@@ -66,6 +75,18 @@ const BatPage = () => {
     }
   };
 
+  const handleReset = () => {
+    if (uploadedAudioUrl.current) {
+      URL.revokeObjectURL(uploadedAudioUrl.current);
+      uploadedAudioUrl.current = null;
+    }
+    setAudioFile(null);
+    setDetectionResult(null);
+    setError('');
+    setSuccess('');
+    setLoading(false);
+  };
+
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto', mt: 6 }}>
       <Paper 
@@ -75,9 +96,7 @@ const BatPage = () => {
           mb: 4,
           borderRadius: '20px',
           p: 3,
-          // backgroundColor: 'rgba(255, 255, 255, 0.7)',
           backgroundColor: theme => alpha(theme.palette.background.paper, 0.7),
-          // backgroundColor: theme => alpha('#000000', 0.7),
           backdropFilter: 'blur(10px)',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
           overflow: 'hidden'
@@ -118,21 +137,6 @@ const BatPage = () => {
               }} 
             />
           </Box>
-
-          <FormControl fullWidth sx={{ mb:2 }}>
-            <InputLabel id="bat-loss-select-label">Loss Function</InputLabel>
-            <Select
-              labelId="bat-loss-select-label"
-              value={lossFunction}
-              label="Loss Function"
-              onChange={e => setLossFunction(e.target.value)}>
-              {LOSS_OPTIONS.map(o => (
-                <MenuItem key={o.value} value={o.value}>
-                  {o.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
           
           <AudioUpload 
             onAudioUploaded={handleAudioUploaded} 
@@ -169,17 +173,24 @@ const BatPage = () => {
           
           {detectionResult && (
             <Box sx={{ mt: 4, p: 3, bgcolor: 'rgba(255, 255, 255, 0.5)', borderRadius: 2, border: '1px solid', borderColor: 'divider', backdropFilter: 'blur(5px)' }}>
+              <Button
+                variant="outlined"
+                color="secondary"
+                fullWidth
+                sx={{ mb: 2 }}
+                onClick={handleReset}
+              >
+                Reset
+              </Button>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, textAlign: 'center' }}>
                 Detection Results
               </Typography>
               
               <Box sx={{ 
                 p: 3, 
-                // bgcolor: detectionResult.isAIGenerated ? 'rgba(244, 67, 54, 0.08)' : 'rgba(76, 175, 80, 0.08)', 
                 bgcolor: theme => detectionResult.isAIGenerated ? alpha(theme.palette.error.main, 0.1) : alpha(theme.palette.success.main, 0.1),
                 borderRadius: 2,
                 border: '1px solid',
-                // borderColor: detectionResult.isAIGenerated ? 'rgba(244, 67, 54, 0.5)' : 'rgba(76, 175, 80, 0.5)',
                 borderColor: theme => detectionResult.isAIGenerated ? alpha(theme.palette.error.main, 0.5) : alpha(theme.palette.success.main, 0.5),
                 textAlign: 'center',
                 mb: 3,
@@ -189,6 +200,7 @@ const BatPage = () => {
                   {detectionResult.isAIGenerated ? 'AI-Generated Audio Detected!' : 'Natural Audio Detected'}
                 </Typography>
                 <Typography variant="body1" sx={{ mt: 1 }}>
+                  Confidence: {(detectionResult.confidence * 100).toFixed(1)}%
                 </Typography>
                 <Typography variant="body1" sx={{ mt: 1 }}>
                   Source: <strong>{detectionResult.source}</strong>
@@ -211,7 +223,7 @@ const BatPage = () => {
                 }}>
                   <CardContent>
                     <Box sx={{ mb: 2 }}>
-                      <audio controls style={{ width: '100%' }} src={URL.createObjectURL(audioFile)} />
+                      <audio controls style={{ width: '100%' }} src={uploadedAudioUrl.current} />
                     </Box>
                     <Button
                       variant="outlined"
@@ -221,7 +233,7 @@ const BatPage = () => {
                       startIcon={<DownloadIcon />}
                       onClick={() => {
                         const link = document.createElement('a');
-                        link.href = URL.createObjectURL(audioFile);
+                        link.href = uploadedAudioUrl.current;
                         link.download = 'analyzed_audio.wav';
                         document.body.appendChild(link);
                         link.click();

@@ -1,29 +1,32 @@
+version: '3.8'
+
 services:
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile.backend
-    volumes:
-      - ./final_models:/app/final_models
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "8001:8001"
-    networks:
-      - app-network
-    restart: unless-stopped
-    container_name: backend
+      - "8000:8000"
+    volumes:
+      - ./working_model:/app/working_model
+    environment:
+      - PYTHONUNBUFFERED=1
 
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
       - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     networks:
       - app-network
-    restart: unless-stopped
-    container_name: frontend
 
 networks:
   app-network:

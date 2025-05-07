@@ -1,35 +1,54 @@
-import React, { useState, useContext } from 'react';
-import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, FormControl, InputLabel, Select, MenuItem, alpha } from '@mui/material';
+import React, { useState, useRef, useEffect } from 'react';
+import { Box, Card, CardContent, Button, Alert, CircularProgress, Typography, Grid, Paper, useTheme, alpha } from '@mui/material';
 import AudioUpload from '../components/AudioUpload';
 import axios from 'axios';
 import DownloadIcon from '@mui/icons-material/Download';
 import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
 
-const LOSS_OPTIONS = [
-  { value: 'mse',             label: 'MSE'     },
-  { value: 'spectrogram',     label: 'Spectrogram'     },
-  { value: 'log_mel',         label: 'Log-Mel'         },
-  { value: 'psychoacoustic',  label: 'Psychoacoustic'  },
-];
-
 // API base URL - update this to match your backend URL
-const API_BASE_URL = 'http://localhost:8001';
+const API_BASE_URL = 'http://localhost:8000';
 
 const MothPage = () => {
   const [audioFile, setAudioFile] = useState(null);
-  const [lossFunction, setLossFunction] = useState('mse');
   const [watermarkedAudio, setWatermarkedAudio] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
+  const originalAudioUrl = useRef(null);
+  const watermarkedAudioUrl = useRef(null);
+
+  useEffect(() => {
+    // Cleanup original audio URL
+    return () => {
+      if (originalAudioUrl.current) {
+        URL.revokeObjectURL(originalAudioUrl.current);
+        originalAudioUrl.current = null;
+      }
+    };
+  }, [audioFile]);
+
+  useEffect(() => {
+    // Cleanup watermarked audio URL
+    return () => {
+      if (watermarkedAudioUrl.current) {
+        URL.revokeObjectURL(watermarkedAudioUrl.current);
+        watermarkedAudioUrl.current = null;
+      }
+    };
+  }, [watermarkedAudio]);
 
   const handleAudioUploaded = (file) => {
+    if (originalAudioUrl.current) {
+      URL.revokeObjectURL(originalAudioUrl.current);
+    }
     setAudioFile(file);
     setWatermarkedAudio(null);
     setError('');
     setSuccess('');
+    setLoading(false);
+    originalAudioUrl.current = URL.createObjectURL(file);
   };
 
   const handleWatermark = async () => {
@@ -42,26 +61,17 @@ const MothPage = () => {
     setSuccess('');
     try {
       const formData = new FormData();
-      formData.append('file', audioFile); // 'file' matches the parameter name in FastAPI
-
-      // Call the actual backend API
-      const response = await axios.post(`${API_BASE_URL}/process-audio?loss_function=${lossFunction}`, formData, {
+      formData.append('file', audioFile);
+      const response = await axios.post(`${API_BASE_URL}/watermark`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
+        responseType: 'blob'
       });
-
-      // Get result data from the response
-      const resultData = response.data;
-      
-      // Get the download URL for the watermarked file
-      const watermarkedUrl = `${API_BASE_URL}/download-processed/${resultData.file_id}/${resultData.original_filename}`;
-      
-      // Fetch the audio file as blob
-      const audioResponse = await fetch(watermarkedUrl);
-      const audioBlob = await audioResponse.blob();
-      
-      // Create a URL for the downloaded blob
-      const audioUrl = URL.createObjectURL(audioBlob);
+      if (watermarkedAudioUrl.current) {
+        URL.revokeObjectURL(watermarkedAudioUrl.current);
+      }
+      const audioUrl = URL.createObjectURL(response.data);
       setWatermarkedAudio(audioUrl);
+      watermarkedAudioUrl.current = audioUrl;
       setSuccess('Audio successfully watermarked!');
       setLoading(false);
     } catch (err) {
@@ -71,15 +81,20 @@ const MothPage = () => {
     }
   };
 
-  const handleDownload = () => {
-    if (watermarkedAudio) {
-      const link = document.createElement('a');
-      link.href = watermarkedAudio;
-      link.download = 'watermarked_audio.wav';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+  const handleReset = () => {
+    if (originalAudioUrl.current) {
+      URL.revokeObjectURL(originalAudioUrl.current);
+      originalAudioUrl.current = null;
     }
+    if (watermarkedAudioUrl.current) {
+      URL.revokeObjectURL(watermarkedAudioUrl.current);
+      watermarkedAudioUrl.current = null;
+    }
+    setAudioFile(null);
+    setWatermarkedAudio(null);
+    setError('');
+    setSuccess('');
+    setLoading(false);
   };
 
   return (
@@ -91,7 +106,6 @@ const MothPage = () => {
           mb: 4,
           borderRadius: '20px',
           p: 3,
-          // backgroundColor: 'rgba(255, 255, 255, 0.7)',
           backgroundColor: theme => alpha(theme.palette.background.paper, 0.7),
           backdropFilter: 'blur(10px)',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
@@ -132,22 +146,7 @@ const MothPage = () => {
                 }
               }} 
             />
-        </Box>
-
-          <FormControl fullWidth sx={{ mb:2 }}>
-            <InputLabel id="moth-loss-select-label">Loss Function</InputLabel>
-            <Select
-              labelId="moth-loss-select-label"
-              value={lossFunction}
-              label="Loss Function"
-              onChange={e => setLossFunction(e.target.value)}>
-              {LOSS_OPTIONS.map(o => (
-                <MenuItem key={o.value} value={o.value}>
-                  {o.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+          </Box>
           
           <AudioUpload 
             onAudioUploaded={handleAudioUploaded} 
@@ -188,6 +187,15 @@ const MothPage = () => {
               <Typography variant="h6" sx={{ mb: 2, fontWeight: 500 }}>
                 Compare Audio Files
               </Typography>
+              <Button
+                variant="outlined"
+                color="secondary"
+                fullWidth
+                sx={{ mb: 2 }}
+                onClick={handleReset}
+              >
+                Reset
+              </Button>
               
               <Grid container spacing={2}>
                 {audioFile && (
@@ -207,7 +215,7 @@ const MothPage = () => {
                           Original Audio
                         </Typography>
                         <Box sx={{ mb: 2 }}>
-                          <audio controls style={{ width: '100%' }} src={URL.createObjectURL(audioFile)} />
+                          <audio controls style={{ width: '100%' }} src={originalAudioUrl.current} />
                         </Box>
                         <Button
                           variant="outlined"
@@ -217,7 +225,7 @@ const MothPage = () => {
                           startIcon={<DownloadIcon />}
                           onClick={() => {
                             const link = document.createElement('a');
-                            link.href = URL.createObjectURL(audioFile);
+                            link.href = originalAudioUrl.current;
                             link.download = 'original_audio.wav';
                             document.body.appendChild(link);
                             link.click();
@@ -248,15 +256,22 @@ const MothPage = () => {
                           Watermarked Audio
                         </Typography>
                         <Box sx={{ mb: 2 }}>
-                          <audio controls style={{ width: '100%' }} src={watermarkedAudio} />
+                          <audio controls style={{ width: '100%' }} src={watermarkedAudioUrl.current} />
                         </Box>
                         <Button
-                          variant="contained"
-                          color="secondary"
+                          variant="outlined"
+                          color="primary"
                           fullWidth
                           size="medium"
                           startIcon={<DownloadIcon />}
-                          onClick={handleDownload}
+                          onClick={() => {
+                            const link = document.createElement('a');
+                            link.href = watermarkedAudioUrl.current;
+                            link.download = 'watermarked_audio.wav';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                          }}
                         >
                           Download Watermarked
                         </Button>

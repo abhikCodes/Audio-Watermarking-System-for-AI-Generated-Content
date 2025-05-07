@@ -17,3 +17,4 @@ models/**/*.ckpt
 *.jpg
 *.png
 *.jpeg
+/node_modules
