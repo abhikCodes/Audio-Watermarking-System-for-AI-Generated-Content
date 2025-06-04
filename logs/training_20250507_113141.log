@@ -1,172 +1,0 @@
-2025-05-07 11:31:43,053 - SteganographyTraining - INFO - ================================================================================
-2025-05-07 11:31:43,054 - SteganographyTraining - INFO - STARTING NEW TRAINING SESSION: 2025-05-07 11:31:43
-2025-05-07 11:31:43,054 - SteganographyTraining - INFO - Using loss function: log_mel
-2025-05-07 11:31:43,054 - SteganographyTraining - INFO - ================================================================================
-2025-05-07 11:31:43,055 - root - INFO - Using loss function from command line: log_mel
-2025-05-07 11:31:43,069 - root - INFO - Using device: mps
-2025-05-07 11:31:43,069 - root - INFO - Created model directories successfully
-2025-05-07 11:31:43,069 - root - INFO - Logs will be saved to: final_models/log_mel/logs/training.log
-2025-05-07 11:31:43,069 - root - INFO - Loading dataset from ./50_speakers_audio_data
-2025-05-07 11:31:43,070 - SteganographyTraining - INFO - Scanning directory ./50_speakers_audio_data for WAV files...
-2025-05-07 11:31:43,073 - SteganographyTraining - INFO - Found 2450 potential WAV files for training
-2025-05-07 11:31:43,148 - root - INFO - Training with loss function: log_mel
-/Users/yash/Documents/course/Semester 2 /Speech Audio/Project/venv/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
-  warnings.warn(
-Loaded settings from .env with loss function: log_mel
-Epoch 1/20:   0%|          | 0/613 [00:00<?, ?it/s]2025-05-07 11:31:44,886 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:44,889 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,023 - root - ERROR - Error processing batch 0: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   0%|          | 1/613 [00:01<12:49,  1.26s/it]2025-05-07 11:31:45,072 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,372 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,375 - root - ERROR - Error processing batch 1: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   0%|          | 2/613 [00:01<07:22,  1.38it/s]2025-05-07 11:31:45,415 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,528 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,530 - root - ERROR - Error processing batch 2: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   0%|          | 3/613 [00:01<04:43,  2.15it/s]2025-05-07 11:31:45,557 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,671 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,672 - root - ERROR - Error processing batch 3: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   1%|          | 4/613 [00:01<03:25,  2.97it/s]2025-05-07 11:31:45,715 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,813 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,814 - root - ERROR - Error processing batch 4: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   1%|          | 5/613 [00:02<02:42,  3.75it/s]2025-05-07 11:31:45,862 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,956 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:45,958 - root - ERROR - Error processing batch 5: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   1%|          | 6/613 [00:02<02:16,  4.45it/s]2025-05-07 11:31:45,988 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,098 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,099 - root - ERROR - Error processing batch 6: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   1%|          | 7/613 [00:02<01:59,  5.06it/s]2025-05-07 11:31:46,133 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,239 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,241 - root - ERROR - Error processing batch 7: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   1%|▏         | 8/613 [00:02<01:48,  5.56it/s]2025-05-07 11:31:46,267 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,382 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,383 - root - ERROR - Error processing batch 8: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   1%|▏         | 9/613 [00:02<01:41,  5.95it/s]2025-05-07 11:31:46,431 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,524 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,525 - root - ERROR - Error processing batch 9: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   2%|▏         | 10/613 [00:02<01:36,  6.24it/s]2025-05-07 11:31:46,547 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,666 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,667 - root - ERROR - Error processing batch 10: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   2%|▏         | 11/613 [00:02<01:33,  6.47it/s]2025-05-07 11:31:46,705 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,807 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,809 - root - ERROR - Error processing batch 11: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   2%|▏         | 12/613 [00:03<01:30,  6.64it/s]2025-05-07 11:31:46,829 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,950 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:46,951 - root - ERROR - Error processing batch 12: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   2%|▏         | 13/613 [00:03<01:28,  6.75it/s]2025-05-07 11:31:46,978 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,092 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,094 - root - ERROR - Error processing batch 13: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   2%|▏         | 14/613 [00:03<01:27,  6.83it/s]2025-05-07 11:31:47,163 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,235 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,236 - root - ERROR - Error processing batch 14: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   2%|▏         | 15/613 [00:03<01:26,  6.89it/s]2025-05-07 11:31:47,267 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,376 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,377 - root - ERROR - Error processing batch 15: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   3%|▎         | 16/613 [00:03<01:26,  6.94it/s]2025-05-07 11:31:47,418 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,518 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,520 - root - ERROR - Error processing batch 16: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   3%|▎         | 17/613 [00:03<01:25,  6.97it/s]2025-05-07 11:31:47,550 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,660 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,661 - root - ERROR - Error processing batch 17: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   3%|▎         | 18/613 [00:03<01:25,  6.99it/s]2025-05-07 11:31:47,695 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,802 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,803 - root - ERROR - Error processing batch 18: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   3%|▎         | 19/613 [00:04<01:24,  7.01it/s]2025-05-07 11:31:47,860 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,943 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:47,945 - root - ERROR - Error processing batch 19: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   3%|▎         | 20/613 [00:04<01:24,  7.03it/s]2025-05-07 11:31:47,973 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,086 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,087 - root - ERROR - Error processing batch 20: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   3%|▎         | 21/613 [00:04<01:24,  7.02it/s]2025-05-07 11:31:48,107 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,229 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,230 - root - ERROR - Error processing batch 21: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   4%|▎         | 22/613 [00:04<01:24,  7.02it/s]2025-05-07 11:31:48,262 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,370 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,372 - root - ERROR - Error processing batch 22: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   4%|▍         | 23/613 [00:04<01:23,  7.03it/s]2025-05-07 11:31:48,411 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,512 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,513 - root - ERROR - Error processing batch 23: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   4%|▍         | 24/613 [00:04<01:23,  7.04it/s]2025-05-07 11:31:48,540 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,654 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,655 - root - ERROR - Error processing batch 24: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   4%|▍         | 25/613 [00:04<01:23,  7.04it/s]2025-05-07 11:31:48,675 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,796 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,798 - root - ERROR - Error processing batch 25: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   4%|▍         | 26/613 [00:05<01:23,  7.04it/s]2025-05-07 11:31:48,817 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,938 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:48,940 - root - ERROR - Error processing batch 26: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   4%|▍         | 27/613 [00:05<01:23,  7.04it/s]2025-05-07 11:31:48,968 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,080 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,082 - root - ERROR - Error processing batch 27: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   5%|▍         | 28/613 [00:05<01:23,  7.04it/s]2025-05-07 11:31:49,117 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,223 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,225 - root - ERROR - Error processing batch 28: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   5%|▍         | 29/613 [00:05<01:23,  7.02it/s]2025-05-07 11:31:49,260 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,366 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,367 - root - ERROR - Error processing batch 29: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   5%|▍         | 30/613 [00:05<01:22,  7.02it/s]2025-05-07 11:31:49,403 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,509 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,510 - root - ERROR - Error processing batch 30: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   5%|▌         | 31/613 [00:05<01:22,  7.02it/s]2025-05-07 11:31:49,566 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,650 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,652 - root - ERROR - Error processing batch 31: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   5%|▌         | 32/613 [00:05<01:22,  7.03it/s]2025-05-07 11:31:49,705 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,792 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,793 - root - ERROR - Error processing batch 32: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   5%|▌         | 33/613 [00:06<01:22,  7.04it/s]2025-05-07 11:31:49,833 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,935 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:49,936 - root - ERROR - Error processing batch 33: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   6%|▌         | 34/613 [00:06<01:22,  7.03it/s]2025-05-07 11:31:49,978 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,076 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,078 - root - ERROR - Error processing batch 34: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   6%|▌         | 35/613 [00:06<01:22,  7.04it/s]2025-05-07 11:31:50,123 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,220 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,222 - root - ERROR - Error processing batch 35: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   6%|▌         | 36/613 [00:06<01:22,  7.01it/s]2025-05-07 11:31:50,268 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,364 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,365 - root - ERROR - Error processing batch 36: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   6%|▌         | 37/613 [00:06<01:22,  7.00it/s]2025-05-07 11:31:50,392 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,506 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,507 - root - ERROR - Error processing batch 37: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   6%|▌         | 38/613 [00:06<01:22,  7.01it/s]2025-05-07 11:31:50,540 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,648 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,649 - root - ERROR - Error processing batch 38: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   6%|▋         | 39/613 [00:06<01:21,  7.02it/s]2025-05-07 11:31:50,689 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,791 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,792 - root - ERROR - Error processing batch 39: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   7%|▋         | 40/613 [00:07<01:21,  7.02it/s]2025-05-07 11:31:50,849 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,936 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:50,938 - root - ERROR - Error processing batch 40: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   7%|▋         | 41/613 [00:07<01:22,  6.96it/s]2025-05-07 11:31:50,960 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,079 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,081 - root - ERROR - Error processing batch 41: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   7%|▋         | 42/613 [00:07<01:21,  6.97it/s]2025-05-07 11:31:51,137 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,223 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,225 - root - ERROR - Error processing batch 42: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   7%|▋         | 43/613 [00:07<01:21,  6.96it/s]2025-05-07 11:31:51,246 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,366 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,367 - root - ERROR - Error processing batch 43: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   7%|▋         | 44/613 [00:07<01:21,  6.99it/s]2025-05-07 11:31:51,387 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,510 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,513 - root - ERROR - Error processing batch 44: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   7%|▋         | 45/613 [00:07<01:21,  6.95it/s]2025-05-07 11:31:51,601 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,658 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,662 - root - ERROR - Error processing batch 45: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 46/613 [00:07<01:22,  6.87it/s]2025-05-07 11:31:51,727 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,805 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,807 - root - ERROR - Error processing batch 46: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 47/613 [00:08<01:22,  6.87it/s]2025-05-07 11:31:51,855 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,948 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:51,949 - root - ERROR - Error processing batch 47: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 48/613 [00:08<01:21,  6.93it/s]2025-05-07 11:31:51,999 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,091 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,094 - root - ERROR - Error processing batch 48: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 49/613 [00:08<01:21,  6.92it/s]2025-05-07 11:31:52,118 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,235 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,237 - root - ERROR - Error processing batch 49: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 50/613 [00:08<01:21,  6.94it/s]2025-05-07 11:31:52,279 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,380 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,383 - root - ERROR - Error processing batch 50: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 51/613 [00:08<01:21,  6.91it/s]2025-05-07 11:31:52,406 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,526 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
-2025-05-07 11:31:52,529 - root - ERROR - Error processing batch 51: Output channels > 65536 not supported at the MPS device. 
-Epoch 1/20:   8%|▊         | 52/613 [00:08<01:21,  6.90it/s]
