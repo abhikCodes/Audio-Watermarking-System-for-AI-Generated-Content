@@ -1,0 +1,16 @@
+2025-05-06 11:23:44,438 - SteganographyTraining - INFO - ================================================================================
+2025-05-06 11:23:44,438 - SteganographyTraining - INFO - STARTING NEW TRAINING SESSION: 2025-05-06 11:23:44
+2025-05-06 11:23:44,438 - SteganographyTraining - INFO - Using loss function: log_mel
+2025-05-06 11:23:44,438 - SteganographyTraining - INFO - ================================================================================
+2025-05-06 11:23:44,439 - root - INFO - Using loss function from command line: log_mel
+2025-05-06 11:23:44,471 - root - INFO - Using device: mps
+2025-05-06 11:23:44,471 - root - INFO - Created model directories successfully
+2025-05-06 11:23:44,471 - root - INFO - Logs will be saved to: final_models/log_mel/logs/training.log
+2025-05-06 11:23:44,471 - root - INFO - Loading dataset from ./50_speakers_audio_data
+2025-05-06 11:23:44,471 - SteganographyTraining - INFO - Scanning directory ./50_speakers_audio_data for WAV files...
+2025-05-06 11:23:44,475 - SteganographyTraining - INFO - Found 2450 potential WAV files for training
+Loaded settings from .env with loss function: log_mel
+Traceback (most recent call last):
+  File "/Users/yash/Documents/course/Semester 2 /Speech Audio/Project/training/train.py", line 447, in <module>
+    audio_transform = AudioTransform(settings.SAMPLE_RATE)
+NameError: name 'AudioTransform' is not defined

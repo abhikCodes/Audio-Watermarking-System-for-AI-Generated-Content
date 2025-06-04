@@ -1,0 +1,705 @@
+2025-05-07 11:23:44,054 - SteganographyTraining - INFO - ================================================================================
+2025-05-07 11:23:44,055 - SteganographyTraining - INFO - STARTING NEW TRAINING SESSION: 2025-05-07 11:23:44
+2025-05-07 11:23:44,055 - SteganographyTraining - INFO - Using loss function: log_mel
+2025-05-07 11:23:44,055 - SteganographyTraining - INFO - ================================================================================
+2025-05-07 11:23:44,056 - root - INFO - Using loss function from command line: log_mel
+2025-05-07 11:23:44,068 - root - INFO - Using device: mps
+2025-05-07 11:23:44,068 - root - INFO - Created model directories successfully
+2025-05-07 11:23:44,068 - root - INFO - Logs will be saved to: final_models/log_mel/logs/training.log
+2025-05-07 11:23:44,069 - root - INFO - Loading dataset from ./50_speakers_audio_data
+2025-05-07 11:23:44,069 - SteganographyTraining - INFO - Scanning directory ./50_speakers_audio_data for WAV files...
+2025-05-07 11:23:44,074 - SteganographyTraining - INFO - Found 2450 potential WAV files for training
+2025-05-07 11:23:44,177 - root - INFO - Training with loss function: log_mel
+/Users/yash/Documents/course/Semester 2 /Speech Audio/Project/venv/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+Loaded settings from .env with loss function: log_mel
+Epoch 1/20:   0%|          | 0/613 [00:00<?, ?it/s]2025-05-07 11:23:45,888 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,895 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,896 - root - ERROR - Error processing batch 0: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   0%|          | 1/613 [00:01<10:46,  1.06s/it]2025-05-07 11:23:45,933 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,934 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,934 - root - ERROR - Error processing batch 1: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:45,972 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,972 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,973 - root - ERROR - Error processing batch 2: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:45,998 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,999 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:45,999 - root - ERROR - Error processing batch 3: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   1%|          | 4/613 [00:01<02:18,  4.39it/s]2025-05-07 11:23:46,039 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,040 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,040 - root - ERROR - Error processing batch 4: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,063 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,064 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,064 - root - ERROR - Error processing batch 5: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,101 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,102 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,102 - root - ERROR - Error processing batch 6: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   1%|          | 7/613 [00:01<01:15,  8.07it/s]2025-05-07 11:23:46,125 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,126 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,127 - root - ERROR - Error processing batch 7: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,152 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,153 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,153 - root - ERROR - Error processing batch 8: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,183 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,184 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,184 - root - ERROR - Error processing batch 9: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,215 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,216 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,216 - root - ERROR - Error processing batch 10: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   2%|▏         | 11/613 [00:01<00:45, 13.20it/s]2025-05-07 11:23:46,235 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,236 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,236 - root - ERROR - Error processing batch 11: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,300 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,301 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,301 - root - ERROR - Error processing batch 12: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,337 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,338 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,338 - root - ERROR - Error processing batch 13: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   2%|▏         | 14/613 [00:01<00:37, 15.77it/s]2025-05-07 11:23:46,384 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,385 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,385 - root - ERROR - Error processing batch 14: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,444 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,445 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,445 - root - ERROR - Error processing batch 15: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,463 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,464 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,464 - root - ERROR - Error processing batch 16: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   3%|▎         | 17/613 [00:01<00:33, 17.77it/s]2025-05-07 11:23:46,499 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,499 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,500 - root - ERROR - Error processing batch 17: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,544 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,546 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,546 - root - ERROR - Error processing batch 18: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,580 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,581 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,581 - root - ERROR - Error processing batch 19: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   3%|▎         | 20/613 [00:01<00:30, 19.75it/s]2025-05-07 11:23:46,604 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,605 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,605 - root - ERROR - Error processing batch 20: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,630 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,630 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,631 - root - ERROR - Error processing batch 21: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,654 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,655 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,655 - root - ERROR - Error processing batch 22: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,672 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,673 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,673 - root - ERROR - Error processing batch 23: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,698 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,698 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,699 - root - ERROR - Error processing batch 24: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   4%|▍         | 25/613 [00:01<00:22, 25.73it/s]2025-05-07 11:23:46,744 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,745 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,745 - root - ERROR - Error processing batch 25: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,790 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,791 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,791 - root - ERROR - Error processing batch 26: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,821 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,822 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,822 - root - ERROR - Error processing batch 27: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,847 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,848 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,849 - root - ERROR - Error processing batch 28: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   5%|▍         | 29/613 [00:02<00:22, 26.04it/s]2025-05-07 11:23:46,875 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,876 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,876 - root - ERROR - Error processing batch 29: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,904 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,905 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,905 - root - ERROR - Error processing batch 30: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:46,978 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,979 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:46,980 - root - ERROR - Error processing batch 31: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   5%|▌         | 32/613 [00:02<00:23, 25.14it/s]2025-05-07 11:23:47,012 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,013 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,013 - root - ERROR - Error processing batch 32: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,047 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,048 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,048 - root - ERROR - Error processing batch 33: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,089 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,090 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,090 - root - ERROR - Error processing batch 34: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   6%|▌         | 35/613 [00:02<00:22, 25.64it/s]2025-05-07 11:23:47,122 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,123 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,123 - root - ERROR - Error processing batch 35: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,147 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,148 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,149 - root - ERROR - Error processing batch 36: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,190 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,190 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,190 - root - ERROR - Error processing batch 37: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   6%|▌         | 38/613 [00:02<00:21, 26.72it/s]2025-05-07 11:23:47,215 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,215 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,216 - root - ERROR - Error processing batch 38: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,241 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,242 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,242 - root - ERROR - Error processing batch 39: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,272 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,273 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,273 - root - ERROR - Error processing batch 40: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,316 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,317 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,317 - root - ERROR - Error processing batch 41: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   7%|▋         | 42/613 [00:02<00:20, 28.23it/s]2025-05-07 11:23:47,341 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,342 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,342 - root - ERROR - Error processing batch 42: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,378 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,379 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,379 - root - ERROR - Error processing batch 43: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,398 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,399 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,399 - root - ERROR - Error processing batch 44: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,417 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,417 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,418 - root - ERROR - Error processing batch 45: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   8%|▊         | 46/613 [00:02<00:18, 31.26it/s]2025-05-07 11:23:47,457 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,457 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,457 - root - ERROR - Error processing batch 46: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,493 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,494 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,494 - root - ERROR - Error processing batch 47: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,524 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,525 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,525 - root - ERROR - Error processing batch 48: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,566 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,566 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,567 - root - ERROR - Error processing batch 49: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   8%|▊         | 50/613 [00:02<00:18, 29.69it/s]2025-05-07 11:23:47,593 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,594 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,595 - root - ERROR - Error processing batch 50: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,619 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,620 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,620 - root - ERROR - Error processing batch 51: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,656 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,657 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,657 - root - ERROR - Error processing batch 52: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,681 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,681 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,682 - root - ERROR - Error processing batch 53: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   9%|▉         | 54/613 [00:02<00:17, 31.12it/s]2025-05-07 11:23:47,729 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,730 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,730 - root - ERROR - Error processing batch 54: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,757 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,757 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,758 - root - ERROR - Error processing batch 55: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,781 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,782 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,782 - root - ERROR - Error processing batch 56: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,805 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,806 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,806 - root - ERROR - Error processing batch 57: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:   9%|▉         | 58/613 [00:02<00:17, 31.42it/s]2025-05-07 11:23:47,834 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,835 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,835 - root - ERROR - Error processing batch 58: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,865 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,866 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,866 - root - ERROR - Error processing batch 59: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,892 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,893 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,893 - root - ERROR - Error processing batch 60: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,917 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,918 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,918 - root - ERROR - Error processing batch 61: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  10%|█         | 62/613 [00:03<00:16, 32.61it/s]2025-05-07 11:23:47,937 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,937 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,938 - root - ERROR - Error processing batch 62: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,962 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,963 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,963 - root - ERROR - Error processing batch 63: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:47,999 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,999 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:47,999 - root - ERROR - Error processing batch 64: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,046 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,047 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,047 - root - ERROR - Error processing batch 65: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  11%|█         | 66/613 [00:03<00:17, 32.14it/s]2025-05-07 11:23:48,077 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,078 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,078 - root - ERROR - Error processing batch 66: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,103 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,104 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,104 - root - ERROR - Error processing batch 67: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,142 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,143 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,143 - root - ERROR - Error processing batch 68: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,174 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,174 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,175 - root - ERROR - Error processing batch 69: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  11%|█▏        | 70/613 [00:03<00:17, 31.88it/s]2025-05-07 11:23:48,211 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,212 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,212 - root - ERROR - Error processing batch 70: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,242 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,243 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,243 - root - ERROR - Error processing batch 71: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,261 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,262 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,262 - root - ERROR - Error processing batch 72: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,296 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,297 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,297 - root - ERROR - Error processing batch 73: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  12%|█▏        | 74/613 [00:03<00:16, 32.11it/s]2025-05-07 11:23:48,328 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,329 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,329 - root - ERROR - Error processing batch 74: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,348 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,349 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,349 - root - ERROR - Error processing batch 75: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,372 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,373 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,374 - root - ERROR - Error processing batch 76: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,391 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,392 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,392 - root - ERROR - Error processing batch 77: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,416 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,417 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,417 - root - ERROR - Error processing batch 78: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  13%|█▎        | 79/613 [00:03<00:15, 34.90it/s]2025-05-07 11:23:48,435 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,436 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,436 - root - ERROR - Error processing batch 79: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,468 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,469 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,469 - root - ERROR - Error processing batch 80: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,499 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,500 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,500 - root - ERROR - Error processing batch 81: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,537 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,537 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,538 - root - ERROR - Error processing batch 82: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  14%|█▎        | 83/613 [00:03<00:15, 34.41it/s]2025-05-07 11:23:48,562 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,563 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,563 - root - ERROR - Error processing batch 83: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,594 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,595 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,595 - root - ERROR - Error processing batch 84: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,620 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,621 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,621 - root - ERROR - Error processing batch 85: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,644 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,645 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,645 - root - ERROR - Error processing batch 86: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  14%|█▍        | 87/613 [00:03<00:14, 35.17it/s]2025-05-07 11:23:48,685 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,686 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,686 - root - ERROR - Error processing batch 87: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,713 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,714 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,715 - root - ERROR - Error processing batch 88: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,740 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,740 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,741 - root - ERROR - Error processing batch 89: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,781 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,782 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,782 - root - ERROR - Error processing batch 90: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  15%|█▍        | 91/613 [00:03<00:15, 33.17it/s]2025-05-07 11:23:48,821 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,822 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,823 - root - ERROR - Error processing batch 91: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,863 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,864 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,864 - root - ERROR - Error processing batch 92: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,888 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,889 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,889 - root - ERROR - Error processing batch 93: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,906 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,907 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,907 - root - ERROR - Error processing batch 94: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  15%|█▌        | 95/613 [00:04<00:15, 32.86it/s]2025-05-07 11:23:48,937 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,938 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,938 - root - ERROR - Error processing batch 95: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:48,986 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,987 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:48,987 - root - ERROR - Error processing batch 96: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,019 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,020 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,020 - root - ERROR - Error processing batch 97: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,045 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,046 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,046 - root - ERROR - Error processing batch 98: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  16%|█▌        | 99/613 [00:04<00:16, 31.51it/s]2025-05-07 11:23:49,075 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,077 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,077 - root - ERROR - Error processing batch 99: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,103 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,104 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,104 - root - ERROR - Error processing batch 100: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,150 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,151 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,152 - root - ERROR - Error processing batch 101: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,177 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,178 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,178 - root - ERROR - Error processing batch 102: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  17%|█▋        | 103/613 [00:04<00:16, 31.13it/s]2025-05-07 11:23:49,200 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,201 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,201 - root - ERROR - Error processing batch 103: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,241 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,241 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,242 - root - ERROR - Error processing batch 104: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,285 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,285 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,286 - root - ERROR - Error processing batch 105: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,319 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,319 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,320 - root - ERROR - Error processing batch 106: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  17%|█▋        | 107/613 [00:04<00:16, 30.23it/s]2025-05-07 11:23:49,334 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,335 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,335 - root - ERROR - Error processing batch 107: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,372 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,373 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,373 - root - ERROR - Error processing batch 108: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,400 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,401 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,401 - root - ERROR - Error processing batch 109: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,426 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,427 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,427 - root - ERROR - Error processing batch 110: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  18%|█▊        | 111/613 [00:04<00:15, 32.03it/s]2025-05-07 11:23:49,451 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,452 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,452 - root - ERROR - Error processing batch 111: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,470 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,471 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,471 - root - ERROR - Error processing batch 112: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,517 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,517 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,518 - root - ERROR - Error processing batch 113: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,562 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,563 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,563 - root - ERROR - Error processing batch 114: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  19%|█▉        | 115/613 [00:04<00:15, 31.17it/s]2025-05-07 11:23:49,582 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,583 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,583 - root - ERROR - Error processing batch 115: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,607 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,608 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,608 - root - ERROR - Error processing batch 116: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,637 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,638 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,638 - root - ERROR - Error processing batch 117: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,675 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,676 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,677 - root - ERROR - Error processing batch 118: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  19%|█▉        | 119/613 [00:04<00:15, 32.31it/s]2025-05-07 11:23:49,710 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,711 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,711 - root - ERROR - Error processing batch 119: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,753 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,754 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,754 - root - ERROR - Error processing batch 120: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,815 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,815 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,816 - root - ERROR - Error processing batch 121: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,848 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,849 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,849 - root - ERROR - Error processing batch 122: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  20%|██        | 123/613 [00:05<00:16, 28.92it/s]2025-05-07 11:23:49,867 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,867 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,868 - root - ERROR - Error processing batch 123: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,906 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,907 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,907 - root - ERROR - Error processing batch 124: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,941 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,942 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,942 - root - ERROR - Error processing batch 125: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:49,972 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,973 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,973 - root - ERROR - Error processing batch 126: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  21%|██        | 127/613 [00:05<00:16, 29.85it/s]2025-05-07 11:23:49,991 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,991 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:49,991 - root - ERROR - Error processing batch 127: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,019 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,020 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,020 - root - ERROR - Error processing batch 128: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,054 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,055 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,055 - root - ERROR - Error processing batch 129: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,079 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,080 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,080 - root - ERROR - Error processing batch 130: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  21%|██▏       | 131/613 [00:05<00:15, 31.75it/s]2025-05-07 11:23:50,099 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,100 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,100 - root - ERROR - Error processing batch 131: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,132 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,132 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,132 - root - ERROR - Error processing batch 132: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,155 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,156 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,157 - root - ERROR - Error processing batch 133: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,177 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,178 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,178 - root - ERROR - Error processing batch 134: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,219 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,220 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,220 - root - ERROR - Error processing batch 135: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  22%|██▏       | 136/613 [00:05<00:14, 33.05it/s]2025-05-07 11:23:50,250 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,250 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,250 - root - ERROR - Error processing batch 136: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,275 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,275 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,275 - root - ERROR - Error processing batch 137: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,305 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,306 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,306 - root - ERROR - Error processing batch 138: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,347 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,348 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,349 - root - ERROR - Error processing batch 139: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  23%|██▎       | 140/613 [00:05<00:14, 32.46it/s]2025-05-07 11:23:50,367 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,368 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,368 - root - ERROR - Error processing batch 140: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,393 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,394 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,394 - root - ERROR - Error processing batch 141: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,429 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,430 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,430 - root - ERROR - Error processing batch 142: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,454 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,455 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,455 - root - ERROR - Error processing batch 143: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  23%|██▎       | 144/613 [00:05<00:13, 33.78it/s]2025-05-07 11:23:50,479 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,480 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,480 - root - ERROR - Error processing batch 144: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,512 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,513 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,513 - root - ERROR - Error processing batch 145: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,537 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,538 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,538 - root - ERROR - Error processing batch 146: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,586 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,587 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,587 - root - ERROR - Error processing batch 147: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  24%|██▍       | 148/613 [00:05<00:14, 32.66it/s]2025-05-07 11:23:50,612 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,613 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,613 - root - ERROR - Error processing batch 148: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,646 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,647 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,648 - root - ERROR - Error processing batch 149: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,680 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,681 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,681 - root - ERROR - Error processing batch 150: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,704 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,705 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,705 - root - ERROR - Error processing batch 151: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  25%|██▍       | 152/613 [00:05<00:13, 33.05it/s]2025-05-07 11:23:50,730 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,731 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,731 - root - ERROR - Error processing batch 152: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,762 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,763 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,763 - root - ERROR - Error processing batch 153: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,812 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,813 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,814 - root - ERROR - Error processing batch 154: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,863 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,863 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,864 - root - ERROR - Error processing batch 155: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  25%|██▌       | 156/613 [00:06<00:15, 30.26it/s]2025-05-07 11:23:50,903 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,904 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,904 - root - ERROR - Error processing batch 156: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,922 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,923 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,923 - root - ERROR - Error processing batch 157: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,962 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,963 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,963 - root - ERROR - Error processing batch 158: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:50,981 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,981 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:50,982 - root - ERROR - Error processing batch 159: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  26%|██▌       | 160/613 [00:06<00:14, 31.27it/s]2025-05-07 11:23:51,006 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,007 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,007 - root - ERROR - Error processing batch 160: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,042 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,043 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,043 - root - ERROR - Error processing batch 161: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,079 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,080 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,080 - root - ERROR - Error processing batch 162: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,110 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,111 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,111 - root - ERROR - Error processing batch 163: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  27%|██▋       | 164/613 [00:06<00:14, 31.14it/s]2025-05-07 11:23:51,134 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,135 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,135 - root - ERROR - Error processing batch 164: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,153 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,154 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,154 - root - ERROR - Error processing batch 165: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,193 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,193 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,194 - root - ERROR - Error processing batch 166: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,217 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,218 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,218 - root - ERROR - Error processing batch 167: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  27%|██▋       | 168/613 [00:06<00:13, 32.77it/s]2025-05-07 11:23:51,250 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,251 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,251 - root - ERROR - Error processing batch 168: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,289 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,290 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,290 - root - ERROR - Error processing batch 169: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,320 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,321 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,321 - root - ERROR - Error processing batch 170: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,351 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,352 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,352 - root - ERROR - Error processing batch 171: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  28%|██▊       | 172/613 [00:06<00:13, 31.86it/s]2025-05-07 11:23:51,371 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,372 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,372 - root - ERROR - Error processing batch 172: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,401 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,402 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,403 - root - ERROR - Error processing batch 173: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,442 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,443 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,443 - root - ERROR - Error processing batch 174: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,472 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,473 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,473 - root - ERROR - Error processing batch 175: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  29%|██▊       | 176/613 [00:06<00:13, 32.19it/s]2025-05-07 11:23:51,498 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,498 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,499 - root - ERROR - Error processing batch 176: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,532 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,533 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,533 - root - ERROR - Error processing batch 177: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,557 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,557 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,557 - root - ERROR - Error processing batch 178: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,597 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,598 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,598 - root - ERROR - Error processing batch 179: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  29%|██▉       | 180/613 [00:06<00:13, 32.15it/s]2025-05-07 11:23:51,644 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,645 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,645 - root - ERROR - Error processing batch 180: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,671 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,671 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,672 - root - ERROR - Error processing batch 181: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,706 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,706 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,706 - root - ERROR - Error processing batch 182: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,733 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,734 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,734 - root - ERROR - Error processing batch 183: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  30%|███       | 184/613 [00:06<00:13, 31.27it/s]2025-05-07 11:23:51,775 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,776 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,776 - root - ERROR - Error processing batch 184: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,800 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,801 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,801 - root - ERROR - Error processing batch 185: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,818 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,819 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,819 - root - ERROR - Error processing batch 186: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,862 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,863 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,863 - root - ERROR - Error processing batch 187: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  31%|███       | 188/613 [00:07<00:13, 31.21it/s]2025-05-07 11:23:51,882 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,883 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,883 - root - ERROR - Error processing batch 188: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,901 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,902 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,903 - root - ERROR - Error processing batch 189: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,950 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,951 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,951 - root - ERROR - Error processing batch 190: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:51,981 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,982 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:51,982 - root - ERROR - Error processing batch 191: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  31%|███▏      | 192/613 [00:07<00:13, 31.90it/s]2025-05-07 11:23:52,019 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,020 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,020 - root - ERROR - Error processing batch 192: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,050 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,051 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,051 - root - ERROR - Error processing batch 193: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,082 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,083 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,083 - root - ERROR - Error processing batch 194: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,112 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,113 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,114 - root - ERROR - Error processing batch 195: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  32%|███▏      | 196/613 [00:07<00:13, 31.43it/s]2025-05-07 11:23:52,144 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,145 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,145 - root - ERROR - Error processing batch 196: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,177 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,178 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,178 - root - ERROR - Error processing batch 197: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,206 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,206 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,207 - root - ERROR - Error processing batch 198: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,230 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,231 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,231 - root - ERROR - Error processing batch 199: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  33%|███▎      | 200/613 [00:07<00:12, 32.20it/s]2025-05-07 11:23:52,255 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,255 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,256 - root - ERROR - Error processing batch 200: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,281 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,282 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,282 - root - ERROR - Error processing batch 201: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,330 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,331 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,331 - root - ERROR - Error processing batch 202: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,348 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,349 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,349 - root - ERROR - Error processing batch 203: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  33%|███▎      | 204/613 [00:07<00:12, 32.66it/s]2025-05-07 11:23:52,388 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,389 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,389 - root - ERROR - Error processing batch 204: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,428 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,429 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,429 - root - ERROR - Error processing batch 205: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,461 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,462 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,463 - root - ERROR - Error processing batch 206: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,513 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,514 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,514 - root - ERROR - Error processing batch 207: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  34%|███▍      | 208/613 [00:07<00:13, 29.58it/s]2025-05-07 11:23:52,538 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,539 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,540 - root - ERROR - Error processing batch 208: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,570 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,571 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,571 - root - ERROR - Error processing batch 209: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,604 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,604 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,605 - root - ERROR - Error processing batch 210: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,626 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,627 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,627 - root - ERROR - Error processing batch 211: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  35%|███▍      | 212/613 [00:07<00:12, 31.09it/s]2025-05-07 11:23:52,653 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,654 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,654 - root - ERROR - Error processing batch 212: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,685 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,686 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,686 - root - ERROR - Error processing batch 213: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,704 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,705 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,706 - root - ERROR - Error processing batch 214: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,737 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,738 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,738 - root - ERROR - Error processing batch 215: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  35%|███▌      | 216/613 [00:07<00:12, 32.42it/s]2025-05-07 11:23:52,798 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,799 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,799 - root - ERROR - Error processing batch 216: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,825 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,826 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,826 - root - ERROR - Error processing batch 217: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,857 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,857 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,858 - root - ERROR - Error processing batch 218: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,882 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,882 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,882 - root - ERROR - Error processing batch 219: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  36%|███▌      | 220/613 [00:08<00:12, 30.87it/s]2025-05-07 11:23:52,921 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,922 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,922 - root - ERROR - Error processing batch 220: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,954 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,955 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,955 - root - ERROR - Error processing batch 221: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:52,992 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,992 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:52,993 - root - ERROR - Error processing batch 222: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:53,010 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,011 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,011 - root - ERROR - Error processing batch 223: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  37%|███▋      | 224/613 [00:08<00:12, 30.95it/s]2025-05-07 11:23:53,052 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,053 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,053 - root - ERROR - Error processing batch 224: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:53,085 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,086 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,086 - root - ERROR - Error processing batch 225: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:53,111 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,112 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,112 - root - ERROR - Error processing batch 226: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:53,142 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,143 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,143 - root - ERROR - Error processing batch 227: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+Epoch 1/20:  37%|███▋      | 228/613 [00:08<00:12, 30.73it/s]2025-05-07 11:23:53,182 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,183 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,183 - root - ERROR - Error processing batch 228: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead
+2025-05-07 11:23:53,222 - root - INFO - Original batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,223 - root - INFO - Final batch shape: torch.Size([4, 1, 240000])
+2025-05-07 11:23:53,223 - root - ERROR - Error processing batch 229: Given groups=1, weight of size [64, 1, 8], expected input[1, 4, 240000] to have 1 channels, but got 4 channels instead

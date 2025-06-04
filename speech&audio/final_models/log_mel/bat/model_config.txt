@@ -1,0 +1,23 @@
+Training Date: 2025-05-05 23:33:57
+Loss Function: log_mel
+Epochs: 15
+Batch Size: 4
+Learning Rate: 0.0002
+
+Bat Decoder Architecture:
+BatDecoder(
+  (conv1): Conv1d(1, 64, kernel_size=(8,), stride=(4,))
+  (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv2): Conv1d(64, 128, kernel_size=(8,), stride=(4,))
+  (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv3): Conv1d(128, 256, kernel_size=(8,), stride=(4,))
+  (bn3): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv4): Conv1d(256, 256, kernel_size=(8,), stride=(4,))
+  (bn4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (global_pool): AdaptiveAvgPool1d(output_size=1)
+  (fc1): Linear(in_features=256, out_features=512, bias=True)
+  (dropout1): Dropout(p=0.3, inplace=False)
+  (fc2): Linear(in_features=512, out_features=256, bias=True)
+  (dropout2): Dropout(p=0.3, inplace=False)
+  (fc3): Linear(in_features=256, out_features=1, bias=True)
+)
