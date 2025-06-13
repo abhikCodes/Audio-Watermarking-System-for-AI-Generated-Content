@@ -89,7 +89,7 @@ Through experiments, the **Log-Mel-Spectrogram Loss** was found to provide a goo
 *   **Abhik Sarkar** ([abhik.sarkar@ucdconnect.ie](mailto:abhik.sarkar@ucdconnect.ie))
 
 Project for [Module Name/Course - e.g., Speech & Audio Processing], University College Dublin.
-Date: March 31, 2025 (as per proposal, adjust if needed)
+Date: March 31, 2025 
 
 ## Future Directions
 
