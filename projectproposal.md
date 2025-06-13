@@ -2,7 +2,7 @@
 
 **Authors:**  
 Yash Singh Pathania (24204265) | [yash.pathania@ucdconnect.ie](mailto:yash.pathania@ucdconnect.ie)  
-Abhik Sarkar (24214927)
+Abhik Sarkar (24214927) | [abhik.sarkar@ucdconnect.ie] (mailto:abhik.sarkar@ucdconnect.ie)  
 
 **Date:** March 31, 2025
 
